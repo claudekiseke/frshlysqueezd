@@ -8,7 +8,6 @@ import CommunityStats from '../components/CommunityStats/CommunityStats';
 import SupportTabs from '../components/SupportTabs/SupportTabs';
 import Brands from '../components/Brands/Brands';
 import Footer from '../components/Footer/Footer';
-import '../styles/Home.module.css';
 import { createClient } from 'contentful';
 import ContactForm from '../components/Forms/ContactForm.js/ContactForm';
 

@@ -9,7 +9,6 @@ import SupportTabs from '../components/SupportTabs/SupportTabs';
 import Team from '../components/Team/Team';
 import Brands from '../components/Brands/Brands';
 import Footer from '../components/Footer/Footer';
-import '../styles/Home.module.css';
 import { createClient } from 'contentful';
 
 
