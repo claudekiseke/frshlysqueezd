@@ -1,4 +1,5 @@
 import 'firebase/auth';
+import Head from 'next/head';
 import Header from '../components/Header/Header';
 import PageHeading from '../components/PageHeading/PageHeading';
 import SectionHeading from '../components/SectionHeading/SectionHeading';
@@ -60,6 +61,11 @@ export default function Home({ page, communityStats }) {
 
   return (
     <>
+      <Head>
+        <title>Frshly Squeezd</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
       <PageHeading key={pageHeading.sys.id} page={page} />
       {section}
