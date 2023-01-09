@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Auth from '../../components/Forms/Auth/auth';
+import Auth from '../../components/Forms/Auth/Auth';
 
 const Login = () => {
 
