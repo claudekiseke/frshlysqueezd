@@ -4,7 +4,7 @@ import Login from "./Login";
 import Register from "./Register";
 import { useRouter } from 'next/router';
 
-const Auth = () => {
+function Auth() {
 
     const url = useRouter();
 
