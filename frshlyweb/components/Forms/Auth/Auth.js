@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 
 const Auth = () => {
 
-    const url = useRouter();
+    // const url = useRouter();
 
     return (
         <div className="container">
-            <div className={styles.auth}>
+            {/* <div className={styles.auth}>
                 <>
                     <div className={`${styles.header} ${url.pathname === `/account/login` ? styles.login : styles.register} `}>
                         <Link href="/account/login">Log In</Link>
@@ -18,7 +18,7 @@ const Auth = () => {
                     </div>
                     {url.pathname === `/account/login` ? <Login /> : <Register />}
                 </>
-            </div>
+            </div> */}
         </div>
     );
 }
