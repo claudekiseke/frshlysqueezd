@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost&family=Kristi&family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Kristi&family=Poppins:ital,wght@0,300;0,400;0,600;1,300&display=swap');
 
 :root {
   --black: #2E1002;
@@ -10,7 +10,7 @@
   --purple: #E9D5E9;
   --blue: #D5E8E9;
   --green: #D7E9D5;
-  --frshly-orange: #F46027;
+  --frshly-orange: #F56B2C;
   --clamp-yellow: #F2A900;
 }
 
@@ -58,7 +58,8 @@ body {
   flex-direction: column;
 }
 input,
-select {
+select,
+textarea {
   background-color: var(--neutral);
   border: 1px solid var(--light-brown);
   border-radius: 30px;
@@ -67,8 +68,12 @@ select {
   padding: 20px;
 }
 input::placeholder,
-select::placeholder {
+select::placeholder,
+textarea::placeholder {
   color: var(--dark-grey);
+}
+textarea {
+  resize: none;
 }
 .btn {
   border-radius: 30px;
@@ -89,11 +94,11 @@ select::placeholder {
   color: var(--neutral);
   transition: .5s all ease;
 }
-.btn--primary:hover {
-  background-color: var(--black-opacity);
-  border-color: var(--black-opacity);
+.btn__primary:hover {
+  background-color: var(--frshly-orange);
+  border-color: var(--frshly-orange);
 }
-.btn--primary:disabled {
+.btn__primary:disabled {
   background-color: var(--dark-grey);
   border-color: var(--dark-grey);
 }
@@ -101,6 +106,13 @@ select::placeholder {
   border: 1px solid var(--black);
   color: var(--black);
   transition: .5s all ease;
+}
+.btn__secondary:hover {
+  background-color: var(--black);
+  color: var(--neutral);
+}
+.btn__pill {
+  padding: 5px 20px;
 }
 #login__form,
 .register__personal-details,
@@ -112,4 +124,10 @@ select::placeholder {
 
 .content-right {
   grid-column:  4 /span 9;
+}
+.show {
+  display: block !important;
+}
+.show-grid {
+  display: grid !important;
 }
