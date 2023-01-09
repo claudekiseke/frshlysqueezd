@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['images.ctfassets.net'],
-    loader: 'custom',
-    loaderFile: './public/loader.js',
+    domains: ['images.ctfassets.net']
   },
 }
 
