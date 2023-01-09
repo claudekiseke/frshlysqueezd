@@ -1,0 +1,36 @@
+.contact {
+    margin-bottom: 60px;
+}
+.contactform {
+    grid-column: span 5;
+} 
+.contactform__form {
+    display: flex;
+    flex-direction: column;
+}
+.contacttext__title:first-child {
+    margin-top: 0;
+}
+.contacttext {
+    grid-column: 7 / span 6;
+}
+.contacttext__title {
+    color: var(--brown);
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.contacttext__email {
+    color: var(--black);
+    font-family: 'Poppins';
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0;
+    text-decoration: none;
+    transition: .5s color ease;
+}
+.contacttext__email:hover {
+    color: var(--frshly-orange);
+}

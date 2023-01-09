@@ -1,0 +1,23 @@
+.supporttabs {
+    display: none;
+}
+.supporttab {
+    background-color: var(--dark-neutral);
+    color: var(--black);
+    border-radius: 8px;
+    border: 0;
+    grid-column: span 4;
+    margin-bottom: 60px;
+    padding: 45px 40px;
+    text-align: center;
+    text-decoration: none;
+    transition: .5s all ease;
+}
+.supporttab:hover {
+    background-color: var(--frshly-orange);
+    color: var(--neutral);
+}
+.title {
+    font-family: 'Poppins';
+    font-weight: 600;
+}

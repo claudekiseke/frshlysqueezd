@@ -1,0 +1,40 @@
+.announcement {
+    align-items: center;
+    background-color: var(--green);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: var(--black);
+    display: flex;
+    grid-column: span 12;
+    justify-content: center;
+    margin: 0;
+    padding: 5px 8px;
+}
+.text {
+    text-align: center;
+}
+.title {
+    font-size: 0.85em;
+    font-weight: 400;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+.title strong {
+    font-family: 'Mixcase';
+    font-weight: 400;
+    text-transform: lowercase;
+}
+.link {
+    color: var(--black);
+    font-size: 0.86em;
+    font-weight: 800;
+}
+.close {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+.close svg {
+    cursor: pointer;
+}

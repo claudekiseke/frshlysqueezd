@@ -1,0 +1,49 @@
+.heading {
+    background-color: var(--blue);
+    color: var(--black);
+    padding: 40px 40px 60px;
+    margin-bottom: 60px;
+}
+.homeheading {
+    background-color: transparent;
+}
+.pagetitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+.pagemeta, .homedesc {
+    grid-column: 1 / span 5;
+}
+.homemeta {
+    grid-row: 2;
+}
+.homedesc {
+    grid-row: 3;
+}
+.pagetagline {
+    display: flex;
+    gap: 5px;
+}
+.pagetagline h2 {
+    font-family: 'Poppins';
+    font-size: 4.8rem;
+    font-weight: 300;
+    line-height: 4.8rem;
+    margin: 0;
+}
+.pagetagline h2 b {
+    font-family: 'Kristi';
+    font-size: 8rem;
+    font-weight: 400;
+    color: var(--clamp-yellow);
+}
+.pagedesc, .homeimg {
+    grid-column: 7 / span 6;
+    align-self: center;
+}
+.homeimg {
+    grid-row: 1 / span 4;
+    border-radius: 5px;
+}

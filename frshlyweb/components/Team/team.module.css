@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+.teamMembers {
+    margin-bottom: 60px;
+}
+.teamMember {
+    grid-column: span 4;
+    text-align: center;
+}
+.teamMember:nth-child(1) .signature {
+    font-family: 'Caveat';
+    font-size: 6rem;
+    margin: 0;
+}
+.name {
+    font-size: 1.4rem;
+    margin: 0;
+}
+.role {
+    color: var(--light-brown);
+    margin-top: 0;
+}
