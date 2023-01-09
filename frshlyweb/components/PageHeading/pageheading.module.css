@@ -47,3 +47,7 @@
     grid-row: 1 / span 4;
     border-radius: 5px;
 }
+
+.homeimg img {
+    width: 100%;
+}
