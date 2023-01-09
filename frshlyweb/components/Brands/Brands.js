@@ -18,7 +18,6 @@ const Brands = ({ brand }) => {
                     width={width}
                     height={height}
                     alt={alt}
-                    loader={myImageLoader}
                 />
             </div>
         )

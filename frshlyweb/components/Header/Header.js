@@ -67,8 +67,7 @@ const Header = () => {
               <Image 
               src={logo} 
               alt="Frshly Squeezd" 
-              layout="responsive" 
-              loader={myImageLoader}
+              layout="responsive"
               />
             </a>
           </Link>

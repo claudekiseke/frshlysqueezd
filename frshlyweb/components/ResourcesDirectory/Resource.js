@@ -35,7 +35,6 @@ const Resource = ({ resourceFields, overlay, filter }) => {
                     width={width}
                     height={height}
                     alt={title}
-                    loader={myImageLoader}
                 />
             );
         } else {
@@ -49,7 +48,6 @@ const Resource = ({ resourceFields, overlay, filter }) => {
                     width={width}
                     height={height}
                     alt={title}
-                    loader={myImageLoader}
                 />
             );
         }

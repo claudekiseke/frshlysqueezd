@@ -48,7 +48,6 @@ const PageHeading = ( {page} ) => {
                     height={page.fields.pageHeading.fields.pageThumbnail.fields.file.details.image.height}
                     alt="test"
                     priority
-                    loader={myImageLoader}
                     />
                 </div>
             </div>

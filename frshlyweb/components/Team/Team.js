@@ -19,7 +19,6 @@ const Team = ({ team }) => {
                     width={width}
                     height={height}
                     alt={alt}
-                    loader={myImageLoader}
                 />
                 <h4 className={styles.signature}>{name}</h4>
                 <h5 className={styles.name}>{name}</h5>
