@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     domains: ['images.ctfassets.net'],
     loader: 'custom',
-    loaderFile: './public/Loader.js',
+    loaderFile: './public/loader.js',
   },
 }
 
