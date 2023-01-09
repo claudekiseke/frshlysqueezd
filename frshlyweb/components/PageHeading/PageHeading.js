@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import myImageLoader from '../../public/loader';
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import { db, doc, getDoc } from "../../firebase/clientApp";
 import styles from './pageheading.module.css';

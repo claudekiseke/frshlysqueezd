@@ -1,6 +1,5 @@
 import logo from './Logo.png';
 import AnnouncementBar from '../AnnouncementBar/AnnouncementBar';
-import myImageLoader from '../../public/loader';
 import Navigation from './Navigation/Navigation';
 import Link from 'next/link';
 import Image from 'next/image';

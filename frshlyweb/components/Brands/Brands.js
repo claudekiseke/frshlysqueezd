@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import myImageLoader from '../../public/loader';
 import styles from './brands.module.css';
 
 const Brands = ({ brand }) => {
