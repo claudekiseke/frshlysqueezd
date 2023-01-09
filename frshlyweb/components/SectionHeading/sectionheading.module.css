@@ -1,0 +1,31 @@
+.sectionHeading {
+    display: none;
+    margin-bottom: 30px;
+}
+.titleH2 {
+    background-color: var(--neutral);
+    display: inline-block;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 3.2rem;
+    grid-area: 1 / 1 / 1 / span 6;
+    line-height: 3.8rem;
+    margin: 0;
+}
+.titleH3 {
+    background-color: var(--neutral);
+    font-weight: 600;
+    font-size: 2rem;
+    grid-area: 1 / 1 / 1 / span 6;
+    margin: 0;
+}
+.desc {
+    color: var(--brown);
+    grid-area: 2 / 1 / 2 / span 6;
+    margin-top: 0;
+}
+.ctaLink {
+    grid-area: 1 / 10 / 1 / span 3;
+    justify-self: end;
+    margin-bottom: 0;
+}

@@ -1,0 +1,26 @@
+.nav__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+.nav__item {
+    padding: 0 10px;
+}
+.nav__item:first-child {
+    padding-left: 0;
+}
+.nav__item:last-child {
+    padding-right: 0;
+}
+.nav__item a {
+    color: var(--black);
+    text-decoration: none;
+    transition: .5s color ease;
+}
+.nav__list:hover a {
+    color: var(--black-opacity);
+}
+.nav__item a:hover {
+    color: var(--black);
+}
