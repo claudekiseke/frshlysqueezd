@@ -62,13 +62,11 @@ const Header = () => {
       <div className="container">
         <div className={styles.logo}>
           <Link href="/">
-            <a>
               <Image 
               src={logo} 
               alt="Frshly Squeezd" 
               layout="responsive"
               />
-            </a>
           </Link>
         </div>
         <div className={styles.nav__left}>
