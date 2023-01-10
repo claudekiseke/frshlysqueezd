@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Kristi&family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+  --black: #2E1002;
+  --brown: #7A4B34;
+  --light-brown: #A88676;
+  --neutral: #FCF8F7;
+  --dark-neutral: #F7EFED;
+  --grey: #F7F7F7;
+  --purple: #E9D5E9;
+  --blue: #D5E8E9;
+  --green: #D7E9D5;
+  --frshly-orange: #F56B2C;
+  --clamp-yellow: #F2A900;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--neutral);
+  color: var(--black);
+  font-family: 'Jost', sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 20px;  
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0;
+  }
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.header_nav__right__QShDA nav ul {
+  justify-content: flex-end;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+input,
+select {
+  background-color: var(--neutral);
+  border: 1px solid var(--light-brown);
+  border-radius: 30px;
+  font-family: inherit;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+input::placeholder,
+select::placeholder {
+  color: var(--dark-grey);
+}
+.btn {
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Poppins';
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.btn:disabled {
+  cursor: initial;
+}
+.btn__primary {
+  background-color: var(--black);
+  border-color: var(--black);
+  color: var(--neutral);
+  transition: .5s all ease;
+}
+.btn--primary:hover {
+  background-color: var(--black-opacity);
+  border-color: var(--black-opacity);
+}
+.btn--primary:disabled {
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
+}
+.btn__secondary {
+  border: 1px solid var(--black);
+  color: var(--black);
+  transition: .5s all ease;
+}
+#login__form,
+.register__personal-details,
+.register__career-details,
+.register__network-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-right {
+  grid-column:  4 /span 9;
+}
