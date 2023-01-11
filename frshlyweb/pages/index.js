@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import styles from './Home.module.css';
 
@@ -85,11 +86,16 @@ export default function Landing() {
             <div className={`container ${styles.container}`}>
                 <header className={styles.header}>
                     <a href="mailto:hello@frshlysqueezd.com" class={`btn btn__secondary ${styles.btn} ${styles.btn__secondary}`}>Get in touch</a>
-                    <a href="https://www.linkedin.com/company/frshlysqueezd" target="_blank" class={`btn btn__primary ${styles.btn} ${styles.btn__primary}`}>Follow us on LinkedIn</a>
+                    <a href="https://www.linkedin.com/company/frshlysqueezd" target="_blank" rel="noreferrer" class={`btn btn__primary ${styles.btn} ${styles.btn__primary}`}>Follow us on LinkedIn</a>
                 </header>
 
                 <main div className={styles.main}>
-                    <img src="https://images.ctfassets.net/xa1los3yndi8/2l3wsP2lZPMo8hartismIj/9cff6775c0ad42379acd83b56290af46/Logo.png" width="274" />
+                    <Image
+                    src="https://images.ctfassets.net/xa1los3yndi8/2l3wsP2lZPMo8hartismIj/9cff6775c0ad42379acd83b56290af46/Logo.png"
+                    width="274"
+                    height="30" 
+                    alt="Frshly Squeezd"
+                    />
                     <p className={styles.p}>We’re an open collective of designers of design and tech creatives, professionals, students and grads, cultivating
                         a culture of education, growth and collaboration through virtual and in-person events, projects and research.
                     </p>
