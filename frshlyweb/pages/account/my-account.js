@@ -36,13 +36,13 @@ export async function getStaticProps() {
 
 const MyAccount = ({ page, supportTabs, accountContent, links }) => {
 
-    // const router = useRouter();
+    const router = useRouter();
 
-    // onAuthStateChanged(auth, (user) => {
-    //     if (!user) {
-    //         router.push('/account/login')
-    //     }
-    //     });
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            router.push('/account/login')
+        }
+        });
 
   const [isFilter, setFilter] = useState('all');
 

@@ -1,7 +1,6 @@
 import styles from './contactform.module.css';
 
 const ContactForm = ({ contactForm }) => {
-console.log(contactForm);
     return(
         <div className={`${styles.contact} container`}>
             <div className={styles.contactform}>

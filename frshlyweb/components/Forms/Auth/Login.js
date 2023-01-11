@@ -50,11 +50,6 @@ function Login() {
           value="Log In" 
           onClick={loginSubmit}
          />
-        <button 
-        className="login__btn login__google" 
-        onClick={signInWithGoogle}>
-          Login with Google
-        </button>
         <div>
           <Link href="/reset">Forgot Password</Link>
         </div>
