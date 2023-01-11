@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.2",
     "@next/font": "13.1.1",
+    "contentful": "^9.2.15",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "firebase": "^9.15.0",
     "next": "13.1.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-mailchimp-subscribe": "^2.1.3"
   }
 }

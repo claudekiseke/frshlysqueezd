@@ -1,0 +1,27 @@
+.center {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 12;
+    margin-bottom: 60px;
+}
+.center div {
+    border: solid var(--dark-neutral);
+    border-width: 1px 1px 1px 0;
+    padding: 40px;
+    text-align: center;
+}
+.center div:last-child {
+    border-right: 0;
+}
+.center img {
+    height: 30px;
+    max-height: 30px;
+}
+.h2 {
+    color: var(--brown);
+    font-size: 1em;
+    line-height: 35px;
+    margin: 0;
+
+}

@@ -1,0 +1,20 @@
+.accountdetails {
+    display: none;
+}
+.fieldset {
+    border: 0;
+    padding: 5px 0;
+}
+.label {
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+.input_group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    margin-top: 20px;
+}
+.form > .input_group {
+    margin-top: 0;
+}

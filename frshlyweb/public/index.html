@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frshly Squeezd</title>
+  <link rel="stylesheet" href="globals.css">
+  <style>
+    body {
+      padding: 40px 20px 20px;
+    }
+
+    header {
+      grid-area: 2 / 1 / 2 / span 6;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      grid-area: 1 / 1 / 1 / span 6;
+      align-self: center;
+      text-align: center;
+    }
+
+    footer {
+      grid-area: 3 / 1 / 3 / span 6;
+      align-self: end;
+    }
+
+    .container {
+      min-height: 90vh;
+      padding: 0;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .btn {
+      padding: 5px 28px;
+      text-decoration: none;
+    }
+
+    .mc-field-group {
+      display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mc-field-group input {
+      background-color: var(--grey);
+      border: 1px solid var(--dark-neutral);
+      padding: 20px 30px;
+      max-width: 100%;
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+    }
+
+    .mc-field-group input:first-child {
+      border-radius: 30px 0 0 30px;
+    }
+
+    .mc-field-group input:last-child {
+      border-left: 1px solid var(--dark-neutral);
+      border-radius: 0 30px 30px 0;
+    }
+    .mc-field-group .btn {
+      background-color: var(--black);
+     -webkit-appearance: none;
+      border-radius: 0 30px 30px 0 !important;
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
+
+
+    @media only screen and (min-width: 768px) {
+      .container {
+        min-height: 100vh;
+      }
+
+      header {
+        grid-area: 1 / 9 / 1 / span 4;
+        display: inline-block;
+      }
+
+      .btn:first-child {
+        margin-right: 10px;
+      }
+
+      main {
+        grid-area: 2 / 3 / 2 / span 8;
+        align-self: center;
+        text-align: center;
+      }
+
+      footer {
+        grid-area: 3 / 3 / 3 / span 8;
+        align-self: end;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="mailto:hello@frshlysqueezd.com" class="btn btn__secondary">Get in touch</a>
+      <a href="https://www.linkedin.com/company/frshlysqueezd" target="_blank" class="btn btn__primary">Follow us on LinkedIn</a>
+    </header>
+    <main>
+      <img src="Logo.png" width="274">
+      <p>We’re an open collective of designers of design and tech creatives, professionals, students and grads, cultivating
+        a culture of education, growth and collaboration through virtual and in-person events, projects and research.
+      </p>
+      <p><strong>Be the first one to find out about our launch. No spam. Ever. We promise.</strong></p>
+    <!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+  <form action="https://frshlysqueezd.us7.list-manage.com/subscribe/post?u=7f5f44f058739ef29780dca63&amp;id=628c0ddafe&amp;f_id=00a684e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate sign-up-form" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+      
+      <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+      <br />
+      <div id="mce-responses" class="clear foot">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>
+
+<div class="mc-field-group">
+<input type="text" value="" name="FNAME" class="required" id="mce-FNAME" required placeholder="First Name*">
+  <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="Last Name">
+  </div>
+<div class="mc-field-group">
+<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address*" required>
+<input type="text" value="" name="CITY" class="" id="mce-CITY" placeholder="Location (City, Country)">
+</div>
+<div class="mc-field-group">
+<input type="text" value="" name="OCCUPATION" class="" id="mce-OCCUPATION" placeholder="Occupation">
+<input type="submit" value="Join the community" name="subscribe" id="mc-embedded-subscribe" class="btn btn__primary">
+
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7f5f44f058739ef29780dca63_628c0ddafe" tabindex="-1" value=""></div>
+      <div class="optionalParent">
+          <div class="clear foot">
+          </div>
+      </div>
+  </div>
+</div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='CITY1';ftypes[3]='address';fnames[4]='COUNTRY1';ftypes[4]='address';fnames[5]='OCCUPATION';ftypes[5]='text';fnames[6]='CITY';ftypes[6]='text';fnames[7]='COUNTRY';ftypes[7]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+    </main>
+    <footer>
+      <p class="copyright">Copyright Ⓒ FRSHLY SQUEEZD 2022, All Rights Reserved</p>
+    </footer>
+  </div>
+</body>
+
+</html>
