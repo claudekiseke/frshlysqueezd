@@ -66,6 +66,7 @@ const Header = () => {
               src={logo} 
               alt="Frshly Squeezd" 
               layout="responsive"
+              priority
               />
           </Link>
         </div>
