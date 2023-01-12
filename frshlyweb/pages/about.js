@@ -1,5 +1,6 @@
 import React from 'react';
 import 'firebase/auth';
+import Head from 'next/head';
 import Header from '../components/Header/Header';
 import PageHeading from '../components/PageHeading/PageHeading';
 import SectionHeading from '../components/SectionHeading/SectionHeading';
@@ -36,7 +37,7 @@ export async function getStaticProps() {
 
 }
 
-const Support = ({ page, communityStats, supportTabs, team } ) => {
+const Support = ({ page, communityStats, supportTabs, team }) => {
 
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
@@ -59,16 +60,16 @@ const Support = ({ page, communityStats, supportTabs, team } ) => {
         break;
 
       case 'communityStats':
-      component = <CommunityStats key={mainContent[index].sys.id} communityStats={communityStats} />;
-      break;
+        component = <CommunityStats key={mainContent[index].sys.id} communityStats={communityStats} />;
+        break;
 
       case 'supportTabs':
-      component = <SupportTabs key={mainContent[index].sys.id} supportTabs={supportTabs} />;
-      break;
+        component = <SupportTabs key={mainContent[index].sys.id} supportTabs={supportTabs} />;
+        break;
 
       case 'team':
-      component = <Team key={mainContent[index].sys.id} team={team} />;
-      break;
+        component = <Team key={mainContent[index].sys.id} team={team} />;
+        break;
     }
 
     return component;
@@ -76,6 +77,11 @@ const Support = ({ page, communityStats, supportTabs, team } ) => {
 
   return (
     <>
+      <Head>
+        <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
       <PageHeading key={pageHeading.sys.id} page={page} />
       {section}

@@ -62,7 +62,7 @@ export default function Home({ page, communityStats }) {
   return (
     <>
       <Head>
-        <title>Frshly Squeezd</title>
+        <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

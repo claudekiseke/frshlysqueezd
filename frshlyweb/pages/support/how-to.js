@@ -1,5 +1,6 @@
 import React from 'react';
 import 'firebase/auth';
+import Head from 'next/head';
 import Header from '../../components/Header/Header';
 import PageHeading from '../../components/PageHeading/PageHeading';
 import Accordion from '../../components/Accordion/Accordion';
@@ -41,7 +42,7 @@ const HowTo = ({ page, communityStats, accordion }) => {
         switch (item.sys.contentType.sys.id) {
             case 'accordion':
                 component = <Accordion key={mainContent[index].sys.id} accordion={accordion} />;
-            break;
+                break;
 
             case 'mailingListSection':
                 component = <MailingListSection key={mainContent[index].sys.id} mailingListSection={mainContent[index].fields} />;
@@ -57,6 +58,11 @@ const HowTo = ({ page, communityStats, accordion }) => {
 
     return (
         <>
+            <Head>
+                <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <Header />
             <PageHeading key={pageHeading.sys.id} page={page} />
             {section}
