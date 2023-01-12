@@ -1,15 +1,20 @@
 import Image from 'next/image';
+import Signature from './Signature';
 import styles from './team.module.css';
 
 const Team = ({ team }) => {
     const teamMembers = team.fields.teamMembers;
     const teamMember = teamMembers.map((item, index) => {
-        const name = item.fields.name;
-        const role = item.fields.role;
-        const avatar = item.fields.avatar.fields.file.url;
-        const width = item.fields.avatar.fields.file.details.image.width;
-        const height = item.fields.avatar.fields.file.details.image.height;
-        const alt  = item.fields.avatar.fields.file.title;
+        const fields = item.fields
+        const font = fields.signatureFont;
+        const fontSize = fields.FontSize;
+        const name = fields.name;
+        const role = fields.role;
+        const avatarFields = fields.avatar.fields.file;
+        const avatar = avatarFields.url;
+        const width = avatarFields.details.image.width;
+        const height = avatarFields.details.image.height;
+        const alt  = fields.avatarAltText;
 
         return (
             <div key={index} className={styles.teamMember}>
@@ -19,7 +24,7 @@ const Team = ({ team }) => {
                     height={height}
                     alt={alt}
                 />
-                <h4 className={styles.signature}>{name}</h4>
+                <Signature styles={styles} font={font} fontSize={fontSize} name={name} />
                 <h5 className={styles.name}>{name}</h5>
                 <p className={styles.role}>{role}</p>
             </div>
