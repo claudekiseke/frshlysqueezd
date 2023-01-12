@@ -9,9 +9,16 @@
 }
 .pagetitle {
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     margin-left: 5px;
+    position: relative;
+    z-index: 2;
+}
+.pageParent {
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: none;
 }
 .pagemeta, .homedesc {
     grid-column: 1 / span 5;
