@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from "next/router";
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import React, { useState } from "react";
@@ -36,13 +37,13 @@ export async function getStaticProps() {
 
 const MyAccount = ({ page, supportTabs, accountContent, links }) => {
 
-    const router = useRouter();
+  const router = useRouter();
 
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            router.push('/account/login')
-        }
-        });
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      router.push('/account/login')
+    }
+  });
 
   const [isFilter, setFilter] = useState('all');
 
@@ -53,13 +54,13 @@ const MyAccount = ({ page, supportTabs, accountContent, links }) => {
     let component;
 
     switch (item.sys.contentType.sys.id) {
-        case 'sidebar':
-            component = <Sidebar key={mainContent[index].sys.id} sidebar={mainContent[index].fields.sidebarLinks} links={links} setFilter={setFilter} />;
-            break;
+      case 'sidebar':
+        component = <Sidebar key={mainContent[index].sys.id} sidebar={mainContent[index].fields.sidebarLinks} links={links} setFilter={setFilter} />;
+        break;
 
-        case 'sidebarContent':
-            component = <AccountContent key={mainContent[index].sys.id} filter={isFilter} accountContent={accountContent} supportTabs={supportTabs} />;
-            break;
+      case 'sidebarContent':
+        component = <AccountContent key={mainContent[index].sys.id} filter={isFilter} accountContent={accountContent} supportTabs={supportTabs} />;
+        break;
     }
 
     return component;
@@ -67,6 +68,11 @@ const MyAccount = ({ page, supportTabs, accountContent, links }) => {
 
   return (
     <>
+      <Head>
+        <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
       <PageHeading key={pageHeading.sys.id} page={page} />
       <div className="container">
@@ -79,4 +85,3 @@ const MyAccount = ({ page, supportTabs, accountContent, links }) => {
 
 export default MyAccount;
 
-  
