@@ -1,7 +1,10 @@
+import styles from './auth.module.css';
+
 const CareerDetails = ({ formData, setFormData }) => {
     return (
       <div className="register__career-details">
         <input
+          className={styles.login__textBox}
           id="signup__occupation"
           type="text"
           placeholder="Occupation"
@@ -9,6 +12,7 @@ const CareerDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, occupation: e.target.value})} />
         <select
+          className={styles.login__textBox}
           name="industry"
           id="signup__industry"
           value={formData.industry}
@@ -21,6 +25,7 @@ const CareerDetails = ({ formData, setFormData }) => {
           <option value="audi">Audi</option>
         </select>
         <input
+          className={styles.login__textBox}
           id="signup__other"
           type="text"
           placeholder="Please specify"
@@ -41,6 +46,7 @@ const CareerDetails = ({ formData, setFormData }) => {
           <option value="senior">Senior Level</option>
         </select>
         <input
+          className={styles.login__textBox}
           id="signup__city"
           type="text"
           placeholder="City"
@@ -48,6 +54,7 @@ const CareerDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, city: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__country"
           type="text"
           placeholder="Country"

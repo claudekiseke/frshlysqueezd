@@ -1,7 +1,10 @@
+import styles from './auth.module.css';
+
 const PersonalDetails = ({ formData, setFormData }) => {
     return (
       <div className="register__personal-details">
         <input
+          className={styles.login__textBox}
           id="signup__fname"
           type="text"
           placeholder="First name"
@@ -9,6 +12,7 @@ const PersonalDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, fname: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__lname"
           type="text"
           placeholder="Last name"
@@ -16,6 +20,7 @@ const PersonalDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, lname: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__email"
           type="email"
           placeholder="Email address"
@@ -23,6 +28,7 @@ const PersonalDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, email: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__password"
           type="password"
           placeholder="Password"

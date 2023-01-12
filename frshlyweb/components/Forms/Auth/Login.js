@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import { logIn, signInWithGoogle } from "../../../firebase/clientApp";
+import styles from './auth.module.css';
 
 function Login() {
   const router = useRouter()
@@ -30,7 +31,7 @@ function Login() {
         <input
           id="login__email"
           type="text"
-          className="login__textBox"
+          className={styles.login__textBox}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
@@ -38,7 +39,7 @@ function Login() {
         <input
           id="login__password"
           type="password"
-          className="login__textBox"
+          className={styles.login__textBox}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"

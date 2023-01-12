@@ -1,7 +1,10 @@
+import styles from './auth.module.css';
+
 const NetworkDetails = ({ formData, setFormData }) => {
     return (
       <div className="register__network-details">
         {/* <input
+          className={styles.login__textBox}
           type="file"
           id="signup__profile-pic"
           name="profile-pic"
@@ -9,6 +12,7 @@ const NetworkDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, profilepic: e.target.value })} /> */}
         <input
+          className={styles.login__textBox}
           id="signup__twitter"
           type="text"
           placeholder="Twitter"
@@ -16,6 +20,7 @@ const NetworkDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, twitter: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__instagram"
           type="text"
           placeholder="Instagram"
@@ -23,6 +28,7 @@ const NetworkDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, instagram: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__medium"
           type="text"
           placeholder="Medium"
@@ -30,6 +36,7 @@ const NetworkDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, medium: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__behance"
           type="text"
           placeholder="Behance"
@@ -37,6 +44,7 @@ const NetworkDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, behance: e.target.value })} />
         <input
+          className={styles.login__textBox}
           id="signup__github"
           type="text"
           placeholder="Github"
