@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from './accordion.module.css';
 
-export default function AccordionContent({ index, category, title, content }) {
+export default function AccordionContent({ category, title, content }) {
     const [isActive, setActive] = useState(false);
 
     const accordionHeader = () => {
@@ -25,7 +25,7 @@ export default function AccordionContent({ index, category, title, content }) {
     
     return (
             
-        <div className={styles.accordionItem} key={index} onClick={() => setActive(isActive ? false : true)}>
+        <div className={styles.accordionItem} onClick={() => setActive(isActive ? false : true)}>
             {accordionHeader()}
             {accordionBody()}
         </div>

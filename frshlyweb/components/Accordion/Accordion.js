@@ -12,7 +12,7 @@ export default function Accordion({ accordion }) {
         const title = item.fields.title;
         const content = documentToReactComponents(item.fields.content);
 
-        return <AccordionContent index={index} category={category} title={title} content={content} />
+        return <AccordionContent key={index} category={category} title={title} content={content} />
        
     });
 
