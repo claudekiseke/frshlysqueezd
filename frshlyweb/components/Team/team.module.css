@@ -7,9 +7,8 @@
     grid-column: span 4;
     text-align: center;
 }
-.teamMember:nth-child(1) .signature {
-    font-family: 'Caveat';
-    font-size: 6rem;
+.teamMember .signature {
+    font-size: 5rem;
     margin: 0;
 }
 .name {
