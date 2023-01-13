@@ -4,8 +4,29 @@ import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Auth from '../../components/Forms/Auth/Auth';
+import { createClient } from 'contentful';
 
-const Login = () => {
+export async function getStaticProps() {
+
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  })
+
+  // home page ID
+  const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+  const navigation = await client.getEntries({ content_type: 'menu' });
+
+  return {
+    props: {
+      logo: logo,
+      navigation: navigation
+    }
+  }
+
+}
+
+const Login = ({ logo, navigation }) => {
 
   const router = useRouter();
 
@@ -22,7 +43,7 @@ const Login = () => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header logo={logo} navigation={navigation} />
       <Auth />
       <Footer />
     </div>

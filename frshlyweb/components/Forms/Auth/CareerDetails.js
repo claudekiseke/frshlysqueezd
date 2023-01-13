@@ -1,6 +1,4 @@
-import styles from './auth.module.css';
-
-const CareerDetails = ({ formData, setFormData }) => {
+const CareerDetails = ({ formData, setFormData, styles }) => {
     return (
       <div className="register__career-details">
         <input
@@ -33,6 +31,7 @@ const CareerDetails = ({ formData, setFormData }) => {
           onChange={(e) =>
             setFormData({ ...formData, industryother: e.target.value })} />
         <select
+          className={styles.login__select}
           name="level"
           id="signup__level"
           value={formData.level}

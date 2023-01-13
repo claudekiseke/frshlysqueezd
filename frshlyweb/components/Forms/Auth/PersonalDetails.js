@@ -1,6 +1,4 @@
-import styles from './auth.module.css';
-
-const PersonalDetails = ({ formData, setFormData }) => {
+const PersonalDetails = ({ formData, setFormData, styles }) => {
     return (
       <div className="register__personal-details">
         <input

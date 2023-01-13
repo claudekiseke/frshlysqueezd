@@ -2,12 +2,8 @@
     padding: 15px 0;
 }
 .logo {
-    cursor: pointer;
-    width: 137px;
-}
-.nav__left {
-    grid-column: span 7;
-}
-.nav__right {
-    grid-column: 9 / span 4;
+    align-self: center;
+    grid-column: 5 / span 4;
+    grid-row: 1;
+    justify-self: center;
 }

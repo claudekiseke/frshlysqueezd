@@ -15,6 +15,8 @@ export async function getStaticProps() {
   })
 
   // about page ID
+  const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+  const navigation = await client.getEntries({ content_type: 'menu' });
   const res = await client.getEntry('4eBvOukdeGK0JZvTrPEBg2')
   const resourcesDirectory = await client.getEntries({ content_type: 'resource' })
   const overlay = await client.getAsset('5V9ElQUshEK1eG7G3nZVZ5');
@@ -22,6 +24,8 @@ export async function getStaticProps() {
 
   return {
     props: {
+      logo: logo,
+      navigation: navigation,
       page: res,
       resourcesDirectory: resourcesDirectory,
       overlay: overlay,
@@ -31,7 +35,7 @@ export async function getStaticProps() {
 
 }
 
-const Resources = ({ page, resourcesDirectory, overlay, links }) => {
+const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links }) => {
 
   const [isFilter, setFilter] = useState('all');
 
@@ -61,7 +65,7 @@ const Resources = ({ page, resourcesDirectory, overlay, links }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
       <div className="container">
         {section}

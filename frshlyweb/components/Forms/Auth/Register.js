@@ -1,4 +1,4 @@
-import styles from "./register.module.css";
+import styles from "./auth.module.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { signUp } from "../../../firebase/clientApp";
@@ -32,15 +32,15 @@ const Register = () => {
   const signUpTabs = () => {
     if (step === 0) {
       return (
-        <PersonalDetails formData={formData} setFormData={setFormData} />
+        <PersonalDetails formData={formData} setFormData={setFormData} styles={styles} />
       );
     } else if (step === 1) {
       return (
-        <CareerDetails formData={formData} setFormData={setFormData} />
+        <CareerDetails formData={formData} setFormData={setFormData} styles={styles} />
       );
     } else {
       return (
-        <NetworkDetails formData={formData} setFormData={setFormData} />
+        <NetworkDetails formData={formData} setFormData={setFormData} styles={styles} />
       )
     }
   }

@@ -1,16 +1,25 @@
 .nav__list {
-    padding: 0;
-    list-style: none;
+    align-self: center;
     display: flex;
+    grid-row: 1;
+    list-style: none;
+    padding: 0;
     margin: 0;
+}
+.nav__list:first-of-type {
+    grid-column: 1 / span 5;
+}
+.nav__list:last-of-type {
+    grid-column: span 4;
+    justify-self: end;
 }
 .nav__item {
     padding: 0 10px;
 }
-.nav__item:first-child {
+.nav__list:first-of-type .nav__item:first-child {
     padding-left: 0;
 }
-.nav__item:last-child {
+.nav__list:first-of-type .nav__item:last-child {
     padding-right: 0;
 }
 .nav__item a {
@@ -19,8 +28,39 @@
     transition: .5s color ease;
 }
 .nav__list:hover a {
-    color: var(--black-opacity);
+    color: var(--light-brown);
 }
 .nav__item a:hover {
-    color: var(--black);
+    color: var(--frshly-orange);
+}
+.loginLinks {
+    border: 1px solid var(--frshly-orange);
+    border-radius: 20px;
+    display: none;
+    padding: 5px 28px;
+    margin: 0 10px;
+    transition: .5s all ease;
+}
+.loginLinks:nth-child(odd) {
+    background-color: var(--frshly-orange);
+}
+.loginLinks:nth-child(odd) a {
+    color: var(--neutral);
+}
+.loginLinks:nth-child(even) a {
+    color: var(--frshly-orange);
+}
+.loginLinks:nth-child(odd):hover {
+    background-color: var(--clamp-yellow);
+    border: 1px solid var(--clamp-yellow);
+}
+.loginLinks:nth-child(even):hover {
+    border: 1px solid var(--brown);
+}
+.loginLinks:nth-child(odd):hover a,
+.loginLinks:nth-child(even):hover a {
+    color: var(--brown);
+}
+.show {
+    display: block;
 }
