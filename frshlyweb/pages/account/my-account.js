@@ -18,6 +18,8 @@ export async function getStaticProps() {
 
   // about page ID
   const res = await client.getEntry('7wlXlPB7ItjUwI8GH8CfIP');
+  const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+  const navigation = await client.getEntries({ content_type: 'menu' })
   const accountContent = await client.getEntry('5uv7QCKTImfsgkI2h8GiLG');
   const supportTabs = await client.getEntry('2rRmCmbJZLngiCxjz3893y');
   const overlay = await client.getAsset('5V9ElQUshEK1eG7G3nZVZ5');
@@ -26,6 +28,8 @@ export async function getStaticProps() {
   return {
     props: {
       page: res,
+      logo: logo,
+      navigation: navigation,
       accountContent: accountContent,
       supportTabs: supportTabs,
       overlay: overlay,
@@ -35,7 +39,7 @@ export async function getStaticProps() {
 
 }
 
-const MyAccount = ({ page, supportTabs, accountContent, links }) => {
+const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links }) => {
 
   const router = useRouter();
 
@@ -73,7 +77,7 @@ const MyAccount = ({ page, supportTabs, accountContent, links }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
       <div className="container">
         {section}

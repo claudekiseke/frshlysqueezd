@@ -17,6 +17,8 @@ export async function getStaticProps() {
     })
 
     // support page ID
+    const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+    const navigation = await client.getEntries({ content_type: 'menu' });
     const res = await client.getEntry('3zHwCjiaEX6bEbJgJGVPb1');
     const communityStats = await client.getEntry('2pjcOOh1Xy3kDPgpIEWSvk');
     const supportTabs = await client.getEntry('4dkKCXXyc0F0IGgEG6Eymy');
@@ -24,6 +26,8 @@ export async function getStaticProps() {
 
     return {
         props: {
+            logo: logo,
+            navigation: navigation,
             page: res,
             communityStats: communityStats,
             supportTabs: supportTabs,
@@ -33,7 +37,7 @@ export async function getStaticProps() {
 
 }
 
-const Faq = ({ page, communityStats, accordion }) => {
+const Faq = ({ logo, navigation, page, communityStats, accordion }) => {
     const pageContent = page.fields;
     const pageHeading = pageContent.pageHeading;
     const mainContent = pageContent.mainContent;
@@ -65,7 +69,7 @@ const Faq = ({ page, communityStats, accordion }) => {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <Header />
+            <Header logo={logo} navigation={navigation} />
             <PageHeading key={pageHeading.sys.id} page={page} />
             {section}
             <Footer />

@@ -1,11 +1,17 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import { auth, signOut, onAuthStateChanged } from "../../../firebase/clientApp";
 import styles from './navigation.module.css';
 
-const Navigation = ({ Nav }) => {
+const Navigation = ({ navLinks }) => {
 
-    const ref = useRef();
+    const [isUser, setUser] = useState(false);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            (user) ? setUser(true) : setUser(false)
+        });
+    });
 
     const handleClick = (e) => {
         if (e.currentTarget.classList.contains('logoutbtn')) {
@@ -18,45 +24,56 @@ const Navigation = ({ Nav }) => {
         }
     };
 
-    const listItems = Object.values(Nav);
-    const listItem = listItems.map((item, index) => {
+    const navLink = navLinks.map((item, index) => {
 
-        // useEffect(() => {
-        //     onAuthStateChanged(auth, (user) => {
-        //         if (user) {
-        //             if ((item.className) && (item.className.includes('logged-out'))) {
-        //                 item.display = 'none';
-        //             } if ((item.className) && (item.className.includes('logged-in'))) {
-        //                 item.display = 'block';
-        //             }
-        //         } else {
-        //             if ((item.className) && (item.className.includes('logged-out'))) {
-        //                 item.display = 'block';
-        //             } if ((item.className) && (item.className.includes('logged-in'))) {
-        //                 item.display = 'none';
-        //             }
-        //         }
-        //     });
-        // });
+        const mainMenu = item.fields.mainMenu;
 
-        return (
-            <li
-                className={`${styles.nav__item}${item.className ? ' ' + item.className : ''}`}
-                key={index}
-                ref={ref}
-                style={{ display: item.display }}
-                onClick={handleClick}>
-                <Link href={item.href}>{item.title}</Link>
-            </li>
-        )
-    });
+        if (mainMenu) {
+            const nav = item.fields.navigationItems;
+            const navItems = nav.map((item, index) => {
+                if (item.fields) {
+                    const fields = item.fields;
+                    const linkTitle = fields.linkTitle;
+                    const linkUrl = fields.linkUrl;
+                    const className = fields.className;
+
+                    const loginLinks = () => {
+                        if (className) {
+                            if (className.includes('logged-in')) {
+                                return ('btn ' + className + ' ' + styles.loginLinks + (isUser ? ' ' + styles.show : ''));
+                            } else if (className.includes('logged-out')) {
+                                return ('btn ' + className + ' ' + styles.loginLinks + (!isUser ? ' ' + styles.show : ''));
+                            } else
+                                return (className);
+                        }
+                    }
+
+                    return (
+                        <li
+                            key={index}
+                            className={`${styles.nav__item}${className ? ' ' + loginLinks() : ''}`}
+                            onClick={handleClick}>
+                            <Link
+                                href={linkUrl}
+                                className={`${styles.nav__link}`}>
+                                {linkTitle}
+                            </Link>
+                        </li>
+                    );
+                }
+            });
+
+            return (
+                    <ul className={styles.nav__list} key={index}>{navItems}</ul>
+            );
+        }
+    }
+    );
 
     return (
-        <nav>
-            <ul className={styles.nav__list}>
-                {listItem}
-            </ul>
-        </nav>
+        <>
+            {navLink}
+        </>
     );
 }
 

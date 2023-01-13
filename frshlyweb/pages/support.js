@@ -21,12 +21,17 @@ export async function getStaticProps() {
   })
 
   // support page ID
+  const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+  const navigation = await client.getEntries({ content_type: 'menu' });
   const res = await client.getEntry('6oqhFEO1KP8qTAlUxrL3NV');
   const communityStats = await client.getEntry('2pjcOOh1Xy3kDPgpIEWSvk');
   const supportTabs = await client.getEntry('4dkKCXXyc0F0IGgEG6Eymy');
 
   return {
     props: {
+      page: res,
+      logo: logo,
+      navigation: navigation,
       page: res,
       communityStats: communityStats,
       supportTabs: supportTabs
@@ -35,8 +40,7 @@ export async function getStaticProps() {
 
 }
 
-const Support = ({ page, communityStats, supportTabs }) => {
-
+const Support = ({ logo, navigation, page, communityStats, supportTabs }) => {
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
   const mainContent = pageContent.mainContent;
@@ -80,7 +84,7 @@ const Support = ({ page, communityStats, supportTabs }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
       {section}
       <Footer />

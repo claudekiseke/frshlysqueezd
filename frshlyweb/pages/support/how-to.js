@@ -17,12 +17,16 @@ export async function getStaticProps() {
     })
 
     // support page ID
+    const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+    const navigation = await client.getEntries({ content_type: 'menu' });
     const res = await client.getEntry('4FMOqP0mgRaG0CpbareO8S');
     const communityStats = await client.getEntry('2pjcOOh1Xy3kDPgpIEWSvk');
     const accordion = await client.getEntry('4Ky2JruN1xYCfYl8fxbnQd');
 
     return {
         props: {
+            logo: logo,
+            navigation: navigation,
             page: res,
             communityStats: communityStats,
             accordion: accordion
@@ -31,7 +35,7 @@ export async function getStaticProps() {
 
 }
 
-const HowTo = ({ page, communityStats, accordion }) => {
+const HowTo = ({ logo, navigation, page, communityStats, accordion }) => {
     const pageContent = page.fields;
     const pageHeading = pageContent.pageHeading;
     const mainContent = pageContent.mainContent;
@@ -63,7 +67,7 @@ const HowTo = ({ page, communityStats, accordion }) => {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <Header />
+            <Header logo={logo} navigation={navigation} />
             <PageHeading key={pageHeading.sys.id} page={page} />
             {section}
             <Footer />

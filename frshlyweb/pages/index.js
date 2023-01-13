@@ -17,19 +17,23 @@ export async function getStaticProps() {
   })
 
   // home page ID
+  const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
+  const navigation = await client.getEntries({ content_type: 'menu' });
   const res = await client.getEntry('48Iwwj1cVcgo2N8dkkuBg6');
   const communityStats = await client.getEntry('2pjcOOh1Xy3kDPgpIEWSvk');
 
   return {
     props: {
       page: res,
-      communityStats: communityStats
+      logo: logo,
+      communityStats: communityStats,
+      navigation: navigation
     }
   }
 
 }
 
-export default function Home({ page, communityStats }) {
+export default function Home({ page, logo, communityStats, navigation }) {
   
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
@@ -66,7 +70,7 @@ export default function Home({ page, communityStats }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
       {section}
       <Footer />

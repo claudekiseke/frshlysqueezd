@@ -1,30 +1,46 @@
 .auth {
     grid-column: 5 / span 4;
     margin: 130px 0;
+    text-align: center;
 }
 .header {
-    display: flex;
+    display: inline-block;
     font-family: 'Poppins';
     justify-content: center;
     margin-bottom: 20px;
 }
-.header a {
-    background-color: transparent;
-    border: 0;
-    color: var(--black-opacity);
+.login a,
+.register a {
+    border-bottom: 2px solid transparent;
     font-size: 1em;
     font-weight: 600;
-    margin-bottom: 0;
     margin: 0 15px;
     text-decoration: none;
+    transition: .5s all ease;
 }
-.login a:first-child {
-    padding-bottom: 5px;
-    border-bottom: 1px solid;
+.login :not(.active),
+.register :not(.active) {
+    color: var(--light-brown);
 }
-.register a:last-child {
-    padding-bottom: 5px;
-    border-bottom: 1px solid;
+.login:hover a,
+.register:hover a {
+    border-color: transparent;
+    color: var(--light-brown);
+}
+.login :not(.active):hover,
+.register :not(.active):hover {
+    color: var(--clamp-yellow);
+    border-color: var(--clamp-yellow);
+}
+.login .active,
+.register .active { 
+    color: var(--frshly-orange);
+    border-color: var(--frshly-orange);
+}
+.login .active:hover,
+.register .active:hover { 
+    color: var(--frshly-orange);
+    border-color: var(--frshly-orange);
 }
 .login__textBox {
     background-color: var(--grey);
