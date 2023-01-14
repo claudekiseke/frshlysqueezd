@@ -41,7 +41,7 @@ export async function getStaticProps() {
 
 }
 
-const Support = ({ logo, navigation, page, communityStats, supportTabs, team }) => {
+const Mission = ({ logo, navigation, page, communityStats, supportTabs, team }) => {
 
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
@@ -94,4 +94,4 @@ const Support = ({ logo, navigation, page, communityStats, supportTabs, team }) 
   )
 }
 
-export default Support;
+export default Mission;
