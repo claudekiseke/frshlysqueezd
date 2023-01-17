@@ -10,7 +10,7 @@ import SupportTabs from '../components/SupportTabs/SupportTabs';
 import Brands from '../components/Brands/Brands';
 import Footer from '../components/Footer/Footer';
 import { createClient } from 'contentful';
-import ContactForm from '../components/Forms/ContactForm.js/ContactForm';
+import ContactForm from '../components/Forms/ContactForm/ContactForm';
 
 
 export async function getStaticProps() {

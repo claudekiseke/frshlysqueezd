@@ -1,14 +1,14 @@
 const NetworkDetails = ({ formData, setFormData, styles }) => {
     return (
       <div className="register__network-details">
-        {/* <input
+        <input
           className={styles.login__textBox}
           type="file"
           id="signup__profile-pic"
           name="profile-pic"
           value={formData.profilepic}
           onChange={(e) =>
-            setFormData({ ...formData, profilepic: e.target.value })} /> */}
+            setFormData({ ...formData, profilepic: e.target.value })} />
         <input
           className={styles.login__textBox}
           id="signup__twitter"

@@ -1,13 +1,14 @@
 .supporttabs {
     display: none;
+    margin-bottom: 20px;
 }
 .supporttab {
     background-color: var(--dark-neutral);
     color: var(--black);
     border-radius: 8px;
     border: 0;
-    grid-column: span 4;
-    margin-bottom: 60px;
+    grid-column: span 6;
+    margin-bottom: 20px;
     padding: 45px 40px;
     text-align: center;
     text-decoration: none;
@@ -20,4 +21,13 @@
 .title {
     font-family: 'Poppins';
     font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+    .supporttabs {
+        margin-bottom: 60px;
+    }
+    .supporttab {
+        grid-column: span 4;
+        margin-bottom: 0;
+    }
 }

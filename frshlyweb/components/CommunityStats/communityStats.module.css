@@ -1,8 +1,8 @@
 .communityStats {
     display: grid;
-    grid-column: span 12;
+    grid-column: span 6;
     grid-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: initial;
 }
 .communityStat {
     background-color: var(--dark-neutral);
@@ -35,4 +35,10 @@
 }
 .ctaLink:hover {
     color: var(--light-brown);
+}
+@media screen and (min-width: 768px) {
+    .communityStats {
+        grid-column: span 12;
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

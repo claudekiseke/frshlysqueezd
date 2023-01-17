@@ -1,6 +1,6 @@
 .nav__list {
     align-self: center;
-    display: flex;
+    display: none;
     grid-row: 1;
     list-style: none;
     padding: 0;
@@ -63,4 +63,9 @@
 }
 .show {
     display: block;
+}
+@media screen and (min-width: 768px) {
+    .nav__list {
+        display: flex;
+    }
 }
