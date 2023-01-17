@@ -1,5 +1,6 @@
 .sectionHeading {
     display: none;
+    grid-template-columns: 1fr;
     margin-bottom: 30px;
 }
 .titleH2 {
@@ -8,24 +9,41 @@
     font-family: 'Poppins';
     font-weight: 300;
     font-size: 3.2rem;
-    grid-area: 1 / 1 / 1 / span 6;
     line-height: 3.8rem;
-    margin: 0;
+    margin-bottom: 15px;
 }
 .titleH3 {
     background-color: var(--neutral);
     font-weight: 600;
     font-size: 2rem;
-    grid-area: 1 / 1 / 1 / span 6;
-    margin: 0;
+    margin-bottom: 15px;
 }
 .desc {
     color: var(--brown);
-    grid-area: 2 / 1 / 2 / span 6;
     margin-top: 0;
 }
 .ctaLink {
-    grid-area: 1 / 10 / 1 / span 3;
-    justify-self: end;
+    justify-self: start;
     margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+    .sectionHeading {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .titleH2 {
+        grid-area: 1 / 1 / 1 / span 6;
+        margin: 0;
+    }
+    .titleH3 {
+        grid-area: 1 / 1 / 1 / span 6;
+        margin: 0;
+    }
+    .desc {
+        grid-area: 2 / 1 / 2 / span 6;
+        margin-bottom: 15px;
+    }
+    .ctaLink {
+        grid-area: 1 / 10 / 1 / span 3;
+        justify-self: end;
+    }
 }

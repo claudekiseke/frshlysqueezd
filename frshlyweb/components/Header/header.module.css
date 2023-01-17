@@ -3,7 +3,13 @@
 }
 .logo {
     align-self: center;
-    grid-column: 5 / span 4;
+    grid-column: 1 / span 4;
     grid-row: 1;
-    justify-self: center;
+    justify-self: start;
+}
+@media screen and (min-width: 768px) {
+    .logo {
+        grid-column: 5 / span 4;
+        justify-self: center;
+    }
 }
