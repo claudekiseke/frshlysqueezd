@@ -23,6 +23,7 @@
     background-color: var(--white);
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     grid-area: 2 / 1 / 2 / span 6;
     justify-content: space-between;
     padding: 5px;
@@ -54,7 +55,7 @@
         grid-area: 1 / 1 / 1 / span 3;
     }
     .form {
-        flex-direction: column;
+        flex-direction: row;
         grid-area: 2 / 1 / 2 / span 5;
     }
     .input {
