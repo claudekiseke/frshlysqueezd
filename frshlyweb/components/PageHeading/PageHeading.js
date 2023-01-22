@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import { db, doc, getDoc } from "../../firebase/clientApp";
 import styles from './pageheading.module.css';
+import Carousel from "./Carousel/Carousel";
 
-const PageHeading = ({ page }) => {
+const PageHeading = ({ page, carousel }) => {
     const [fname, setFname] = useState("");
     const router = useRouter()
     const url = router.pathname;
@@ -44,6 +45,7 @@ const PageHeading = ({ page }) => {
                     {page.fields.pageHeading.fields.pageDescription}
                 </div>
                 <div className={styles.homeimg}>
+                    <Carousel carousel={carousel} />
                     <Image
                         src={`https:${page.fields.pageHeading.fields.pageThumbnail.fields.file.url}`}
                         width={page.fields.pageHeading.fields.pageThumbnail.fields.file.details.image.width}
