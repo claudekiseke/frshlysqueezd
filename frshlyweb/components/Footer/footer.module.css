@@ -55,6 +55,7 @@
         grid-area: 1 / 1 / 1 / span 3;
     }
     .form {
+        flex-direction: row;
         grid-area: 2 / 1 / 2 / span 5;
     }
     .input {
