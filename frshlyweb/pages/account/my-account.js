@@ -8,6 +8,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import AccountContent from "../../components/Layout/AccountContent/AccountContent";
 import Footer from '../../components/Footer/Footer';
 import { createClient } from 'contentful';
+import localFont from '@next/font/local'
 
 export async function getStaticProps() {
 
@@ -38,8 +39,9 @@ export async function getStaticProps() {
   }
 
 }
+const porker = localFont({ src: '../../fonts/Porker.otf' })
 
-const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links }) => {
+const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links }, porker) => {
 
   const router = useRouter();
 
@@ -78,7 +80,7 @@ const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
-      <PageHeading key={pageHeading.sys.id} page={page} />
+      <PageHeading key={pageHeading.sys.id} page={page} porker={porker} />
       <div className="container">
         {section}
       </div>

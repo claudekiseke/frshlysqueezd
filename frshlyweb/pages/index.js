@@ -9,6 +9,10 @@ import Brands from '../components/Brands/Brands';
 import Footer from '../components/Footer/Footer';
 import { createClient } from 'contentful';
 import Carousel from '../components/PageHeading/Carousel/Carousel';
+import localFont from '@next/font/local'
+
+const porker = localFont({ src: '../fonts/Porker.otf' })
+
 
 export async function getStaticProps() {
 
@@ -67,12 +71,12 @@ export default function Home({ page, logo, carousel, communityStats, navigation 
   return (
     <>
       <Head>
-        <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
+        <title>{`Frshly Squeezd ${pageHeading.fields.pageTitle ? '- ' + pageHeading.fields.pageTitle : ''}`}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
-      <PageHeading key={pageHeading.sys.id} carousel={carousel} page={page} />
+      <PageHeading key={pageHeading.sys.id} carousel={carousel} page={page} porker={porker} />
       {section}
       <Footer />
     </>

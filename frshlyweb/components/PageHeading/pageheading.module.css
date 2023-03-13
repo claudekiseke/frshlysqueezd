@@ -5,8 +5,20 @@
     padding: 20px 0 30px;
 }
 .homeheading {
-    background-color: transparent;
-}
+    background-color:var(--neutral);
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }    
 .pagemeta {
     grid-area: 1 / 1 / 1 / span 6
 }
@@ -15,7 +27,6 @@
     font-weight: 400;
     text-transform: uppercase;
     margin: 0 0 20px 5px;
-    position: relative;
     z-index: 2;
 }
 .pageParent {
@@ -28,47 +39,70 @@
     gap: 5px;
 }
 .pagetagline h2 {
-    font-family: 'Poppins';
+    color: var(--black);;
+    font-family: 'Porker';
     font-size: 3.2rem;
     font-weight: 300;
     line-height: 3.2rem;
     margin: 0 0 20px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
 }
 .pagetagline h2 b {
-    font-family: 'Kristi';
-    font-size: 6rem;
+    font-size: 1em;
     font-weight: 400;
-    color: var(--clamp-yellow);
+}
+.pagetagline h2 b:nth-child(1) {
+    color: var(--pink);
+}
+.pagetagline h2 b:nth-child(2) {
+    color: var(--yellow);
+}
+.pagetagline h2::after {
+    content: '';
+    background-image: url(https://images.ctfassets.net/xa1los3yndi8/6jpJmMtpChAqxnlTeMBL7y/e535ea98459666ad6bb12b9ca3b61d03/together.svg);
+    background-repeat: no-repeat;
+    width: 241px;
+    height: 107px;
+    display: inline-block;
+    position: relative;
+    left: 8px;
+    top: 35px;
+    line-height: 0;
+    margin-top: -50px;
 }
 .pagedesc, .homeimg {
     grid-column: 1 / span 6;
     align-self: center;
 }
-.homeimg {
-    grid-row: 1 / span 4;
-    border-radius: 5px;
+.homedesc p {
+    color: var(--black);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
 }
-.homeimg img {
-    width: 100%;
-    height: 100%;
-}
+
 @media only screen and (min-width: 768px) {
     .heading {
         margin-bottom: 60px;
     }
     .pagetagline h2 {
-        font-size: 4.8rem;
-        line-height: 4.8rem;
+        font-size: 6.2rem;
+        line-height: 7.4rem;
         margin: 0;
+        z-index: 1;
     }
     .heading {
         padding: 40px 40px 60px;
     }
-    .pagetagline h2 b {
-        font-size: 8rem;
+    .homemeta,
+    .homedesc {
+        grid-column: 4 / span 6;
     }
-    .pagemeta, .homedesc {
-        grid-column: 1 / span 5;
+    .homeheading {
+        padding: 80px 0;
+        margin-bottom: 0;
     }
     .homemeta {
         grid-row: 2;
@@ -76,10 +110,7 @@
     .homedesc {
         grid-row: 3;
     }
-    .pagedesc, .homeimg {
+    .pagedesc {
         grid-column: 7 / span 6;
-    }
-    .homeimg {
-        grid-row: 1 / span 4;
     }
 }

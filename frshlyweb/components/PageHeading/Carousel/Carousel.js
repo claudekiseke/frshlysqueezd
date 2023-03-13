@@ -1,12 +1,15 @@
+import styles from './carousel.module.css';
+
 const Carousel = ({ carousel }) => {
-console.log(carousel.fields.images);    
+ 
 
-const carouselItems = carousel.fields.images;
-const carouselItem = carouselItems.map((item, index) => {
-    
-console.log(item); 
-});
-return 'tert';
+const carouselA = carousel.fields.link1;
+console.log(carouselA);   
+
+return (
+    <div className={styles.carousel_item}>
+       <iframe src={`${carouselA}?controls=0`} width="100%" height="100%" frameBorder="0" allow="autoplay;"></iframe>
+    </div>
+)
 }
-
 export default Carousel;

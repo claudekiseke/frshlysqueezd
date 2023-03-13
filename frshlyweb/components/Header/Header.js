@@ -10,10 +10,9 @@ const Header = ({ logo, navigation }) => {
 
   return (
     <>
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
       <header className={styles.header}>
-        <nav>
-          <div className="container">
+        <nav className={`${styles.nav} container`}>
             <div className={`${styles.logo} ${styles.navItem}`}>
               <Link href="/">
                 <Image
@@ -26,7 +25,6 @@ const Header = ({ logo, navigation }) => {
               </Link>
             </div>
             <Navigation navLinks={navLinks} />
-          </div>
         </nav>
       </header>
     </>
