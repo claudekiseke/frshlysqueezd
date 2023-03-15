@@ -9,12 +9,13 @@
     grid-column: span 12;
     justify-content: center;
     margin: 0;
-    padding: 5px 8px;
+    padding: 10px 8px;
 }
 .text {
     text-align: center;
 }
 .title {
+    color: var(--black);
     font-size: 0.85em;
     font-weight: 400;
     margin-right: 20px;

@@ -23,11 +23,13 @@ const Brands = ({ brand }) => {
     });
 
     return (
+        <div className="container">
         <div className={styles.center}>
             <div>
                 <h2 className={styles.h2}>{brand.brandsTitle}</h2>
             </div>
             {brandImg}
+        </div>
         </div>
     );
 }

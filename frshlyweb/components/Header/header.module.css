@@ -1,5 +1,15 @@
 .header {
-    padding: 15px 0;
+    padding-top: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.nav {
+    background-color: rgba(249, 242, 240, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--dark-neutral);
+    border-radius: 30px;
+    padding: 20px 40px;
 }
 .logo {
     align-self: center;
@@ -8,6 +18,7 @@
     justify-self: start;
 }
 @media screen and (min-width: 768px) {
+
     .logo {
         grid-column: 5 / span 4;
         justify-self: center;

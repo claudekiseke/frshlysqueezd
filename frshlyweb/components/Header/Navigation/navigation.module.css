@@ -25,7 +25,7 @@
 .nav__item a {
     color: var(--black);
     text-decoration: none;
-    transition: .5s color ease;
+    transition: 1.5s color ease;
 }
 .nav__list:hover a {
     color: var(--light-brown);

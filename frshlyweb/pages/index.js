@@ -8,6 +8,11 @@ import CommunityStats from '../components/CommunityStats/CommunityStats';
 import Brands from '../components/Brands/Brands';
 import Footer from '../components/Footer/Footer';
 import { createClient } from 'contentful';
+import Carousel from '../components/PageHeading/Carousel/Carousel';
+import localFont from '@next/font/local'
+
+const porker = localFont({ src: '../fonts/Porker.otf' })
+
 
 export async function getStaticProps() {
 
@@ -19,6 +24,7 @@ export async function getStaticProps() {
   // home page ID
   const logo = await client.getAsset('2l3wsP2lZPMo8hartismIj');
   const navigation = await client.getEntries({ content_type: 'menu' });
+  const  carousel = await client.getEntry('3Cw41S6UuhS6ty1FprBa0q');
   const res = await client.getEntry('48Iwwj1cVcgo2N8dkkuBg6');
   const communityStats = await client.getEntry('2pjcOOh1Xy3kDPgpIEWSvk');
 
@@ -26,6 +32,7 @@ export async function getStaticProps() {
     props: {
       page: res,
       logo: logo,
+      carousel: carousel,
       communityStats: communityStats,
       navigation: navigation
     }
@@ -33,12 +40,10 @@ export async function getStaticProps() {
 
 }
 
-export default function Home({ page, logo, communityStats, navigation }) {
-  
+export default function Home({ page, logo, carousel, communityStats, navigation }) {
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
   const mainContent = pageContent.mainContent;
-
   const section = mainContent.map((item, index) => {
     let component;
 
@@ -66,12 +71,12 @@ export default function Home({ page, logo, communityStats, navigation }) {
   return (
     <>
       <Head>
-        <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
+        <title>{`Frshly Squeezd ${pageHeading.fields.pageTitle ? '- ' + pageHeading.fields.pageTitle : ''}`}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
-      <PageHeading key={pageHeading.sys.id} page={page} />
+      <PageHeading key={pageHeading.sys.id} carousel={carousel} page={page} porker={porker} />
       {section}
       <Footer />
     </>

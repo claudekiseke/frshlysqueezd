@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import { db, doc, getDoc } from "../../firebase/clientApp";
 import styles from './pageheading.module.css';
+import Carousel from "./Carousel/Carousel";
 
-const PageHeading = ({ page }) => {
+const PageHeading = ({ page, carousel, porker }) => {
     const [fname, setFname] = useState("");
     const router = useRouter()
     const url = router.pathname;
@@ -41,23 +42,14 @@ const PageHeading = ({ page }) => {
                     <div className={styles.pagetagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
                 </div>
                 <div className={styles.homedesc}>
-                    {page.fields.pageHeading.fields.pageDescription}
-                </div>
-                <div className={styles.homeimg}>
-                    <Image
-                        src={`https:${page.fields.pageHeading.fields.pageThumbnail.fields.file.url}`}
-                        width={page.fields.pageHeading.fields.pageThumbnail.fields.file.details.image.width}
-                        height={page.fields.pageHeading.fields.pageThumbnail.fields.file.details.image.height}
-                        alt="test"
-                        priority
-                    />
+                    <p>{page.fields.pageHeading.fields.pageDescription}</p>
                 </div>
             </div>
         </div>
 
     ) : (url === '/account/my-account') ? (
 
-        <div className={styles.heading}>
+        <div className={`${styles.heading} ${porker.className}`}>
             <div className="container">
                 <div className={styles.pagemeta}>
                     <span className={styles.pagetitle}>

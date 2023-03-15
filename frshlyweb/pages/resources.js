@@ -4,6 +4,7 @@ import Head from 'next/head';
 import PageHeading from '../components/PageHeading/PageHeading';
 import Sidebar from '../components/Sidebar/Sidebar';
 import ResourcesDirectory from '../components/ResourcesDirectory/ResourcesDirectory';
+import Modal from "../components/Modal/Modal";
 import Footer from '../components/Footer/Footer';
 import { createClient } from 'contentful';
 
@@ -21,6 +22,8 @@ export async function getStaticProps() {
   const resourcesDirectory = await client.getEntries({ content_type: 'resource' })
   const overlay = await client.getAsset('5V9ElQUshEK1eG7G3nZVZ5');
   const links = await client.getEntries({ content_type: 'navigation' });
+  const modal = await client.getEntry('2mbobStDC9QlRpNaoC8e3Z');
+  const submitResource = await client.getEntry('74EDUa04XnaDQzxE1mnYC3');
 
   return {
     props: {
@@ -29,25 +32,28 @@ export async function getStaticProps() {
       page: res,
       resourcesDirectory: resourcesDirectory,
       overlay: overlay,
-      links: links
+      links: links,
+      modal: modal,
+      submitResource: submitResource
     }
   }
 
 }
 
-const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links }) => {
-
+const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links, modal, submitResource }) => {
+// console.log(submitResource);
   const [isFilter, setFilter] = useState('all');
-
+  const [showModal, setShowModal] = useState(false);
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
   const mainContent = pageContent.mainContent;
+
   const section = mainContent.map((item, index) => {
     let component;
 
     switch (item.sys.contentType.sys.id) {
       case 'sidebar':
-        component = <Sidebar key={mainContent[index].sys.id} sidebar={mainContent[index].fields.sidebarLinks} links={links} setFilter={setFilter} />;
+        component = <Sidebar key={mainContent[index].sys.id} sidebar={mainContent[index].fields.sidebarLinks} links={links} setFilter={setFilter} modal={modal} showModal={showModal} setShowModal={setShowModal} submitResource={submitResource} />;
         break;
 
       case 'resources':
@@ -70,6 +76,7 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links 
       <div className="container">
         {section}
       </div>
+      <Modal />
       <Footer />
     </>
   )
