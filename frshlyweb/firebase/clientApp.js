@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
@@ -18,7 +19,8 @@ import {
   collection,
   where,
   addDoc,
-  setDoc
+  setDoc,
+  Timestamp
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -72,7 +74,7 @@ export const signUp = async (fname, lname, email, password, occupation, industry
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    await setDoc(doc(db, "users", user.uid),  {
+    await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
       authProvider: "local",
       fname,
@@ -111,8 +113,82 @@ const sendPasswordReset = async (email) => {
 export const logout = () => {
   signOut(auth).then(() => {
   }).catch((err) => {
-      // An error happened.
-    });;
+    // An error happened.
+  });;
+};
+
+const getUserDetails = async (fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio) => {
+  
+  const [userId, getUserId] = useState('');
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      getUserId(user.uid)
+    }
+  });
+
+
+  console.log(userId);
+  
+  // if (auth.currentUser !== null) {
+  //   const user = auth.currentUser.uid;
+  //   console.log(user)
+  //   if (user) {
+      // const userDetails = await setDoc(docRef);
+// console.log(docRef)
+      // fname = userDetails.fname;
+      // lname = user.lname;
+      // email = user.email;
+      // password = user.password;
+      // occupation = user.occupation;
+      // industry = user.industry;
+      // industryother = user.industryother;
+      // level = user.level;
+      // city = user.city;
+      // country = user.country;
+      // profilepic = user.profilepic;
+      // twitter = user.twitter;
+      // instagram = user.instagram;
+      // medium = user.medium;
+      // behance = user.behance;
+      // github = user.github;
+      // portfolio = user.portfolio;
+  //     return user;
+  //   }
+  // }
+};
+
+const contactSubmit = async (name, company, email, message) => {
+  try {
+    await addDoc(collection(db, "submissions"), {
+      name,
+      company,
+      email,
+      message,
+      timeSent: Timestamp.fromDate(new Date())
+    });
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const resourceSubmit = async (title, url) => {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      try {
+        await addDoc(collection(db, "resources"), {
+          uid: user.uid,
+          title,
+          url,
+          timeSent: Timestamp.fromDate(new Date())
+        });
+      } catch (err) {
+        console.error(err);
+        alert(err.message);
+      }
+    }
+  });
 };
 
 export {
@@ -123,5 +199,8 @@ export {
   signOut,
   onAuthStateChanged,
   signInWithGoogle,
-  sendPasswordReset
+  sendPasswordReset,
+  getUserDetails,
+  contactSubmit,
+  resourceSubmit
 };

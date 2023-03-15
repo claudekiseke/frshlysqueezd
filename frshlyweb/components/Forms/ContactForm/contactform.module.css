@@ -34,6 +34,9 @@
 .contacttext__email:hover {
     color: var(--frshly-orange);
 }
+.contactForm__label {
+    display: none;
+}
 .contactform__form input[type=text],
 .contactform__form input[type=email],
 .contactform__form textarea {

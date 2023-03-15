@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { contactSubmit } from "../../../firebase/clientApp";
 import styles from './contactform.module.css';
 
 const ContactForm = ({ contactForm }) => {
@@ -9,73 +10,87 @@ const ContactForm = ({ contactForm }) => {
         message: ""
     });
 
-    const contactSubmit = (e) => {
-        const form = document.getElementById('contact__form');
+    const inputValue = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const formSubmit = async (e) => {
         e.preventDefault();
 
-        let name = formData.name;
+        const name = formData.name;
         const company = formData.company;
         const email = formData.email;
         const message = formData.message;
 
-        name = '';
-        form.reset();
-        console.log('email: ' + contactForm.generalEnquiriesEmail + ' name: ' + name + ' company: ' + company + ' email: ' + email + ' message: ' + message)
-    }
+        contactSubmit(name, company, email, message);
 
-    return(
+        setFormData({
+            name: "",
+            company: "",
+            email: "",
+            message: "",
+          });
+      };
+
+    return (
         <div className={`${styles.contact} container`}>
             <div className={styles.contactform}>
                 <form
                     className={styles.contactform__form}
                     id="contact__form"
-                    onSubmit={contactSubmit}
+                    onSubmit={formSubmit}
                 >
-                        <input 
-                            type="text"
-                            className={styles.contactform__input}
-                            value={formData.name}
-                            onChange={(e) => setFormData(e.target.value)}
-                            name="name"
-                            id="name"
-                            placeholder={contactForm.fullNamePlaceholder}
-                            required
-                        />
-                        <input
-                            type="text"
-                            className={styles.contactform__input}
-                            value={formData.company}
-                            onChange={(e) =>
-                                setFormData({ ...formData, company: e.target.value})}
-                            name="company"
-                            id="company"
-                            placeholder={contactForm.companyPlaceholder}
-                        />
-                        <input
-                            type="email"
-                            className={styles.contactform__input}
-                            value={formData.email}
-                            onChange={(e) =>
-                                setFormData({ ...formData, email: e.target.value})}
-                            name="email"
-                            id="email"
-                            placeholder={contactForm.emailPlaceholder}
-                            required
-                        />
-                        <textarea 
-                            id="message"
-                            value={formData.message}
-                            onChange={(e) =>
-                                setFormData({ ...formData, message: e.target.value})}
-                            name="message"
-                            placeholder={contactForm.messagePlaceholder}
-                            required
-                            rows="5" />
-                        <input
-                            type="submit"
-                            className="btn btn__primary"
-                            value={contactForm.submitValue}
-                        />
+                    <label className={styles.contactForm__label} htmlFor="name">{contactForm.fullNamePlaceholder}</label>
+                    <input
+                        type="text"
+                        className={styles.contactform__input}
+                        value={formData.name}
+                        onChange={inputValue}
+                        name="name"
+                        placeholder={contactForm.fullNamePlaceholder}
+                        id="name"
+                        required
+                    />
+
+                    <label className={styles.contactForm__label} htmlFor="company">{contactForm.companyPlaceholder}</label>
+                    <input
+                        type="text"
+                        className={styles.contactform__input}
+                        value={formData.company}
+                        onChange={inputValue}
+                        name="company"
+                        placeholder={contactForm.companyPlaceholder}
+                        id="company"
+                    />
+
+                    <label className={styles.contactForm__label} htmlFor="email">{contactForm.emailPlaceholder}</label>
+                    <input
+                        type="email"
+                        className={styles.contactform__input}
+                        value={formData.email}
+                        onChange={inputValue}
+                        name="email"
+                        placeholder={contactForm.emailPlaceholder}
+                        id="email"
+                        required
+                    />
+
+                    <label className={styles.contactForm__label} htmlFor="message">{contactForm.messagePlaceholder}</label>
+                    <textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={inputValue}
+                        name="message"
+                        placeholder={contactForm.messagePlaceholder}
+                        required
+                        rows="5"
+                    />
+
+                    <input
+                        type="submit"
+                        className="btn btn__primary"
+                        value={contactForm.submitValue}
+                    />
                 </form>
             </div>
             <div className={styles.contacttext}>

@@ -1,8 +1,8 @@
 import SidebarMenu from "./SidebarMenu";
 import styles from "./sidebar.module.css";
+import Modal from "../Modal/Modal";
 
-const Sidebar = ({ sidebar, links, setFilter }) => {
-
+const Sidebar = ({ sidebar, links, setFilter, showModal, setShowModal, modal, submitResource }) => {
     const link = sidebar.map((item, index) => {
         const id = item.sys.id;
 
@@ -15,13 +15,25 @@ const Sidebar = ({ sidebar, links, setFilter }) => {
                 const subMenu = item.fields.subLink;
                 const subLink = subMenu.map((item, index) => {
                     const linkTitle = item.fields.linkTitle;
-                    const className = item.fields.className;
+                    let className = item.fields.className;
 
-                    return (
-                        <li className={styles.sidebar__listitem} key={index}>
-                            <button className={`${styles.sidebar__link} ${className}`} onClick={() => setFilter(className)}>{linkTitle}</button>
-                        </li>
-                    );
+                    const filterLink = () => {
+                        if (className && !(className.includes('modal'))) {
+                            setFilter(className);
+                        }
+                    }
+
+                    if (className && className.includes('modal')) {
+                        return (
+                            <Modal className={className} linkTitle={linkTitle} showModal={showModal} setShowModal={setShowModal} modal={modal} key={index} submitResource={submitResource} />
+                        );
+                    } else {
+                        return (
+                            <li className={styles.sidebar__listitem} key={index}>
+                                <button className={`${styles.sidebar__link} ${className}`} onClick={filterLink}>{linkTitle}</button>
+                            </li>
+                        );
+                    }
                 });
 
                 return (
@@ -32,11 +44,23 @@ const Sidebar = ({ sidebar, links, setFilter }) => {
 
             } else if (id === matchingId) {
                 const linkTitle = item.fields.linkTitle;
-                const className = item.fields.className;
+                let className = item.fields.className;
 
-                return (
-                    <button className={`${styles.sidebar__link} ${className}`} onClick={() => setFilter(className)} key={index}>{linkTitle}</button>
-                );
+                const filterLink = () => {
+                    if (className && !(className.includes('modal'))) {
+                        setFilter(className);
+                    }
+                }
+
+                if (className && className.includes('modal')) {
+                    return (
+                        <Modal className={className} linkTitle={linkTitle} showModal={showModal} setShowModal={setShowModal} modal={modal} key={index} submitResource={submitResource} />
+                    );
+                } else {
+                    return (
+                            <button className={`${styles.sidebar__link} ${className}`} onClick={filterLink} key={index}>{linkTitle}</button>
+                    );
+                }
             }
         })
 
