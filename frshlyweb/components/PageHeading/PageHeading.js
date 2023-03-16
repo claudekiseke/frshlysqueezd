@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useRouter } from 'next/router';
+import AnnouncementBar from '../AnnouncementBar/AnnouncementBar';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
-import Image from 'next/image';
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import { db, doc, getDoc } from "../../firebase/clientApp";
 import styles from './pageheading.module.css';
-import Carousel from "./Carousel/Carousel";
+import FeaturedRole from "../FeaturedRole/FeatureRole";
 
-const PageHeading = ({ page, carousel, porker }) => {
+const PageHeading = ({ page, featuredRole }) => {
     const [fname, setFname] = useState("");
     const router = useRouter()
     const url = router.pathname;
@@ -35,18 +35,21 @@ const PageHeading = ({ page, carousel, porker }) => {
     });
 
     return (url === '/') ? (
-
-        <div className={`${styles.heading} ${styles.homeheading}`}>
-            <div className="container">
-                <div className={`${styles.pagemeta} ${styles.homemeta}`}>
-                    <div className={styles.pagetagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
-                </div>
-                <div className={styles.homedesc}>
-                    <p>{page.fields.pageHeading.fields.pageDescription}</p>
+        <>
+            <div className={`${styles.heading} ${styles.homeheading}`}>
+                <div className="container">
+                    <AnnouncementBar />
+                    <div className={`${styles.pagemeta} ${styles.homemeta}`}>
+                        <div className={`${styles.pagetagline} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
+                        <div className={`${styles.pagetagline} desktop-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading2)}</div>
+                    </div>
+                    <div className={styles.homedesc}>
+                        <p>{page.fields.pageHeading.fields.pageDescription}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
+            <FeaturedRole featuredRole={featuredRole} />
+        </>
     ) : (url === '/account/my-account') ? (
 
         <div className={`${styles.heading} ${porker.className}`}>

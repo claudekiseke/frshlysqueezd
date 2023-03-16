@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { getUserDetails, onAuthStateChanged, auth, doc, db } from "../../../firebase/clientApp";
+import { getUserDetails, onAuthStateChanged, auth, doc, db, getDoc } from "../../../firebase/clientApp";
 import styles from "./accountdetails.module.css";
 
 const AccountDetails = ({ accountDetails, filter }) => {
@@ -25,7 +25,7 @@ const AccountDetails = ({ accountDetails, filter }) => {
         portfolio: ""
     });
 
-    getUserDetails(formData.fname, formData.lname, formData.email, formData.password, formData.occupation, formData.industry, formData.industryother, formData.level, formData.city, formData.country, formData.profilepic, formData.twitter, formData.instagram, formData.medium, formData.behance, formData.github, formData.portfolio);
+    getUserDetails(formData, setFormData);
 
     const inputValue = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,7 +33,6 @@ const AccountDetails = ({ accountDetails, filter }) => {
 
     const formSubmit = async (e) => {
         e.preventDefault();
-
     };    
     
     useEffect(() => {

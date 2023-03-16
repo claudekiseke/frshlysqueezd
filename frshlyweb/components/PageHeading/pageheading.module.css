@@ -1,11 +1,52 @@
 .heading {
+
+}
+
+.homeheading {
+    background-color: var(--frshly-orange);
+    margin-top: -83px;
+    padding: 183px 0 200px;
+}
+
+.homemeta {
+    grid-area: 2 / 1 / 2 / span 10;
+}
+
+.pagetagline h2 {
+    color: var(--neutral);
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 5.2rem;
+    margin: 20px 0 60px;
+}
+
+.pagetagline h2 b {
+    color: var(--light-yellow);
+    font-family: 'Kristi';
+    font-size: 8rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.pagetagline h2 b::after {
+    content: '';
+    background-image: url(https://images.ctfassets.net/xa1los3yndi8/20HVH29wrODIhsaLR4QjO6/fd852d69294e8de27d05c23814f53a3b/title-underline.svg);
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 23px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* .heading {
     background-color: var(--blue);
     color: var(--black);
     margin-bottom: 30px;
     padding: 20px 0 30px;
 }
 .homeheading {
-    background-color:var(--neutral);
+    background-color:var(--frshly-orange);
     }
     
     @keyframes gradient {
@@ -20,7 +61,7 @@
         }
     }    
 .pagemeta {
-    grid-area: 1 / 1 / 1 / span 6
+    grid-area: 1 / 1 / 1 / span 6;
 }
 .pagetitle {
     font-size: 1.2rem;
@@ -39,25 +80,21 @@
     gap: 5px;
 }
 .pagetagline h2 {
-    color: var(--black);;
-    font-family: 'Porker';
+    color: var(--neutral);;
+    font-family: 'Poppins';
     font-size: 3.2rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 3.2rem;
     margin: 0 0 20px;
     position: relative;
-    text-align: center;
-    text-transform: uppercase;
 }
 .pagetagline h2 b {
     font-size: 1em;
     font-weight: 400;
 }
-.pagetagline h2 b:nth-child(1) {
-    color: var(--pink);
-}
-.pagetagline h2 b:nth-child(2) {
-    color: var(--yellow);
+.pagetagline h2 b {
+    color: var(--light-yellow);
+    font-family: 'Kristi';
 }
 .pagetagline h2::after {
     content: '';
@@ -88,20 +125,23 @@
         margin-bottom: 60px;
     }
     .pagetagline h2 {
-        font-size: 6.2rem;
-        line-height: 7.4rem;
+        font-size: 4.8rem;
+        line-height: 5.2rem;
         margin: 0;
         z-index: 1;
+    }
+    .pagetagline h2 b {
+        font-size: 8rem;
     }
     .heading {
         padding: 40px 40px 60px;
     }
     .homemeta,
     .homedesc {
-        grid-column: 4 / span 6;
+        grid-column: 1 / span 10;
     }
     .homeheading {
-        padding: 80px 0;
+        padding: 195px 0;
         margin-bottom: 0;
     }
     .homemeta {
@@ -113,4 +153,4 @@
     .pagedesc {
         grid-column: 7 / span 6;
     }
-}
+} */

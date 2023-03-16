@@ -1,14 +1,10 @@
 .header {
-    padding-top: 40px;
+    padding-top: 10px;
     position: sticky;
     top: 0;
     z-index: 2;
 }
 .nav {
-    background-color: rgba(249, 242, 240, 0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--dark-neutral);
-    border-radius: 30px;
     padding: 20px 40px;
 }
 .logo {

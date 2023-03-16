@@ -23,7 +23,7 @@
     padding-right: 0;
 }
 .nav__item a {
-    color: var(--black);
+    color: var(--neutral);
     text-decoration: none;
     transition: 1.5s color ease;
 }
