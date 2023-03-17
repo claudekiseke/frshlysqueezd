@@ -51,9 +51,9 @@ export default function Home({ page, logo, featuredRole, carousel, communityStat
         component = <SectionHeading key={mainContent[index].sys.id} sectionHeading={mainContent[index].fields} />;
         break;
 
-      case 'mailingListSection':
-        component = <MailingListSection key={mainContent[index].sys.id} mailingListSection={mainContent[index].fields} />;
-        break;
+      // case 'mailingListSection':
+      //   component = <MailingListSection key={mainContent[index].sys.id} mailingListSection={mainContent[index].fields} />;
+      //   break;
 
       case 'communityStats':
       component = <CommunityStats key={mainContent[index].sys.id} communityStats={communityStats} />;
