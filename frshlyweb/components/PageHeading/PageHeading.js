@@ -50,7 +50,7 @@ const PageHeading = ({ page, featuredRole }) => {
         </>
     ) : (url === '/account/my-account') ? (
 
-        <div className={`${styles.heading} ${porker.className}`}>
+        <div className={styles.heading}>
             <div className="container">
                 <div className={styles.pagemeta}>
                     <span className={styles.pagetitle}>
