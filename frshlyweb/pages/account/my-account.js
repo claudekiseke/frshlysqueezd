@@ -43,7 +43,7 @@ export async function getStaticProps() {
 }
 const porker = localFont({ src: '../../fonts/Porker.otf' })
 
-const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links, modal }, porker) => {
+const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links, modal }) => {
 
   const router = useRouter();
 
