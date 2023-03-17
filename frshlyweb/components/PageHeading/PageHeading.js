@@ -36,15 +36,13 @@ const PageHeading = ({ page, featuredRole }) => {
 
     return (url === '/') ? (
         <>
-            <div className={`${styles.heading} ${styles.homeheading}`}>
+            <div className={styles.homeHeading}>
                 <div className="container">
                     <AnnouncementBar />
-                    <div className={`${styles.pagemeta} ${styles.homemeta}`}>
-                        <div className={`${styles.pagetagline} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
-                        <div className={`${styles.pagetagline} desktop-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading2)}</div>
-                    </div>
-                    <div className={styles.homedesc}>
-                        <p>{page.fields.pageHeading.fields.pageDescription}</p>
+                    <div className={styles.homeContent}>
+                        <div className={`${styles.pageTitle} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
+                        <div className={`${styles.pageTitle} desktop-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading2)}</div>
+                        <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
                     </div>
                 </div>
             </div>
@@ -61,7 +59,7 @@ const PageHeading = ({ page, featuredRole }) => {
                     <div className={styles.pagetagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2>{fname}</h2></div>
                 </div>
                 <div className={styles.pagedesc}>
-                    {page.fields.pageHeading.fields.pageDescription}
+                {documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}
                 </div>
             </div>
         </div>
