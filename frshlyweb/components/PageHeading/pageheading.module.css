@@ -45,7 +45,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .homeheading {
+    .homeHeading {
         margin-top: -83px;
         padding: 183px 0 200px;
     }
