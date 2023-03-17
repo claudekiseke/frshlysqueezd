@@ -1,6 +1,6 @@
 .header {
     padding-top: 10px;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 2;
 }
@@ -13,8 +13,10 @@
     grid-row: 1;
     justify-self: start;
 }
+.logo img {
+    filter: brightness(10);
+}
 @media screen and (min-width: 768px) {
-
     .logo {
         grid-column: 5 / span 4;
         justify-self: center;
