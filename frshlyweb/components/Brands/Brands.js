@@ -11,25 +11,22 @@ const Brands = ({ brand }) => {
         const alt = item.fields.title;
 
         return (
-            <div key={index}>
                 <Image
                     src={`https:${url}`}
                     width={width}
                     height={height}
                     alt={alt}
+                    key={index}
                 />
-            </div>
         )
     });
 
     return (
         <div className="container">
-        <div className={styles.center}>
-            <div>
-                <h2 className={styles.h2}>{brand.brandsTitle}</h2>
+            <div className={styles.brands}>
+                <h2 className={styles.brands__title}>{brand.brandsTitle}</h2>
+                <div className={styles.brands__images}>{brandImg}</div>
             </div>
-            {brandImg}
-        </div>
         </div>
     );
 }
