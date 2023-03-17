@@ -8,7 +8,7 @@
 }
 
 .featuredRole__row {
-    animation: marqueeRight 100s linear infinite;
+    animation: marqueeRight 50s linear infinite;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -16,7 +16,7 @@
 }
 
 .featuredRole__row:first-child {
-    animation: marqueeLeft 100s linear infinite;
+    animation: marqueeLeft 50s linear infinite;
 }
 
 .featuredRole__title {
@@ -124,5 +124,13 @@
 @media screen and (min-width: 768px) {
     .featuredRole {
         margin-bottom: 80px;
+    }
+
+    .featuredRole__row {
+        animation: marqueeRight 100s linear infinite;
+    }
+    
+    .featuredRole__row:first-child {
+        animation: marqueeLeft 100s linear infinite;
     }
 }
