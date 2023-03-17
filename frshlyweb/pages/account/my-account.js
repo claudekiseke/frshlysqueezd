@@ -8,7 +8,6 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import AccountContent from "../../components/Layout/AccountContent/AccountContent";
 import Footer from '../../components/Footer/Footer';
 import { createClient } from 'contentful';
-import localFont from '@next/font/local'
 
 export async function getStaticProps() {
 
