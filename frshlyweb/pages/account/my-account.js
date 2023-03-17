@@ -41,7 +41,6 @@ export async function getStaticProps() {
   }
 
 }
-const porker = localFont({ src: '../../fonts/Porker.otf' })
 
 const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links, modal }) => {
 
@@ -83,7 +82,7 @@ const MyAccount = ({ page, logo, navigation, supportTabs, accountContent, links,
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
-      <PageHeading key={pageHeading.sys.id} page={page} porker={porker} />
+      <PageHeading key={pageHeading.sys.id} page={page} />
       <div className="container">
         {section}
       </div>
