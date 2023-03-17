@@ -1,0 +1,122 @@
+.featuredRole {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    gap: 15px;
+    margin: -150px 0 80px;
+    overflow: hidden;
+}
+
+.featuredRole__row {
+    animation: marqueeRight 100s linear infinite;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.featuredRole__row:first-child {
+    animation: marqueeLeft 100s linear infinite;
+}
+
+.featuredRole__title {
+    border-radius: 30px;
+    padding: 30px 40px;
+    text-align: center;
+    width: fit-content;
+}
+
+.featuredRole__text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.featuredRole__title:nth-child(5n - 4) {
+    background-color: var(--green-alt);
+    color: var(--green-alt-1);
+}
+
+.featuredRole__title:nth-child(5n - 3) {
+    background-color: var(--pink-alt);
+    color: var(--pink-alt-1);
+}
+
+.featuredRole__title:nth-child(5n - 2) {
+    background-color: var(--orange-alt);
+    color: var(--orange-alt-2);
+}
+
+.featuredRole__title:nth-child(5n - 1) {
+    background-color: var(--blue-alt);
+    color: var(--blue-alt-1);
+}
+
+.featuredRole__title:nth-child(5n) {
+    background-color: var(--purple-alt);
+    color: var(--purple-alt-1);
+}
+
+.featuredRole__row:first-child .featuredRole__title:nth-child(5n - 4) {
+    background-color: var(--orange-alt);
+    color: var(--orange-alt-2);
+}
+
+.featuredRole__row:first-child .featuredRole__title:nth-child(5n - 3) {
+    background-color: var(--blue-alt);
+    color: var(--blue-alt-1);
+}
+
+.featuredRole__row:first-child .featuredRole__title:nth-child(5n - 2) {
+    background-color: var(--purple-alt);
+    color: var(--purple-alt-1);
+}
+
+.featuredRole__row:first-child .featuredRole__title:nth-child(5n - 1) {
+    background-color: var(--green-alt);
+    color: var(--green-alt-1);
+}
+
+.featuredRole__row:first-child .featuredRole__title:nth-child(5n) {
+    background-color: var(--pink-alt);
+    color: var(--pink-alt-1);
+}
+
+@keyframes marqueeLeft {
+    0% {
+        left: 0;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    50% {
+        left: 0%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes marqueeRight {
+    0% {
+        left: -100%;
+    }
+
+    25% {
+        left: 0;
+    }
+
+    50% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}

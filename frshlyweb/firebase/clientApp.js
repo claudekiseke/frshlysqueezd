@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
@@ -117,45 +117,27 @@ export const logout = () => {
   });;
 };
 
-const getUserDetails = async (fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio) => {
+const getUserDetails = async (formData, setFormData) => {
+  // rest of component code
+  // const user = auth.currentUser;
+  const allValuesEmpty = Object.values(formData).every(value => value === '' || value === null || value === undefined);
+
+console.log(allValuesEmpty)
+// if (user) {
+//   console.log('logged in')
+// }
   
-  const [userId, getUserId] = useState('');
+    // onAuthStateChanged(auth, async (user) => {
+    //   doc(db, "users", user.uid)
+    //   const docRef = doc(db, "users", user.uid);
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      getUserId(user.uid)
-    }
-  });
-
-
-  console.log(userId);
-  
-  // if (auth.currentUser !== null) {
-  //   const user = auth.currentUser.uid;
-  //   console.log(user)
-  //   if (user) {
-      // const userDetails = await setDoc(docRef);
-// console.log(docRef)
-      // fname = userDetails.fname;
-      // lname = user.lname;
-      // email = user.email;
-      // password = user.password;
-      // occupation = user.occupation;
-      // industry = user.industry;
-      // industryother = user.industryother;
-      // level = user.level;
-      // city = user.city;
-      // country = user.country;
-      // profilepic = user.profilepic;
-      // twitter = user.twitter;
-      // instagram = user.instagram;
-      // medium = user.medium;
-      // behance = user.behance;
-      // github = user.github;
-      // portfolio = user.portfolio;
-  //     return user;
-  //   }
-  // }
+    //   try {
+    //       const docSnap = await getDoc(docRef);
+    //         setFormData(docSnap.data());
+    //     } catch (e) {
+    //       console.log("dOENS:", e);
+    //   }
+    // }, []);
 };
 
 const contactSubmit = async (name, company, email, message) => {

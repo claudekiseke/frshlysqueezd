@@ -1,41 +1,31 @@
 .announcement {
-    align-items: center;
-    background-color: var(--green);
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-    color: var(--black);
-    display: flex;
-    grid-column: span 12;
-    justify-content: center;
-    margin: 0;
-    padding: 10px 8px;
+    background-color: var(--orange-alt);
+    border: 1px solid var(--orange-alt-1);
+    border-radius: 12px;
+    grid-area: 1 / 1 / 1 / span 6;
+    padding: 10px 15px;
+    width: fit-content;
 }
-.text {
-    text-align: center;
-}
+
 .title {
-    color: var(--black);
-    font-size: 0.85em;
-    font-weight: 400;
-    margin-right: 20px;
-    text-transform: uppercase;
+    color: var(--neutral);
+    font-size: 1.4rem;
+    line-height: 1.2rem;
 }
+
 .title strong {
-    font-family: 'Mixcase';
-    font-weight: 400;
-    text-transform: lowercase;
+    font-weight: 700;
 }
+
 .link {
-    color: var(--black);
-    font-size: 0.86em;
-    font-weight: 800;
+    color: var(--neutral);
+    font-size: 1.4rem;
+    line-height: 1.2rem;
 }
-.close {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-}
-.close svg {
-    cursor: pointer;
+
+@media only screen and (min-width: 768px) {
+    .announcement {
+        grid-column: span 5;
+        padding: 10px 20px;
+    }
 }
