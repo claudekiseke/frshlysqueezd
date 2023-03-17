@@ -30,8 +30,8 @@ const FeaturedRole = (featuredRole) => {
 
     return (
         <div className={styles.featuredRole}>
-            <div className={styles.featuredRole__row}>{row1} {row1} {row1}</div>
-            <div className={styles.featuredRole__row}>{row2} {row2} {row2}</div>
+            <div className={styles.featuredRole__row}>{row1} {row2} {row1}</div>
+            <div className={styles.featuredRole__row}>{row2} {row1} {row2}</div>
         </div>
     );
 }
