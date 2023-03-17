@@ -17,41 +17,45 @@ const SectionHeading = ({ sectionHeading, filter }) => {
 
     const h2 = () => {
         if (sectionHeading.h2Heading) {
-            return(
-                <h2 className={styles.titleH2}>{sectionHeading.h2Heading}</h2>
+            return (
+                <h2 className={styles.sectionHeading__h2}>{sectionHeading.h2Heading}</h2>
             );
         }
     }
     const h3 = () => {
         if (sectionHeading.h3Heading) {
-            return(
-                <h3 className={styles.titleH3}>{sectionHeading.h3Heading}</h3>
+            return (
+                <h3 className={styles.sectionHeading__h3}>{sectionHeading.h3Heading}</h3>
             );
         }
     }
 
-    const p = () => {
+    const description = () => {
         if (sectionHeading.description) {
-            return(
-                <p className={styles.desc}>{sectionHeading.description}</p>
+            return (
+                <p className={styles.sectionHeading__description}>{sectionHeading.description}</p>
             );
         }
     }
 
-    const a = () => {
+    const cta = () => {
         if (sectionHeading.ctaLink && sectionHeading.ctaText) {
-            return(
-                <a href={sectionHeading.ctaLink} className={`${styles.ctaLink} btn btn__secondary btn__pill`}>{sectionHeading.ctaText}</a>
+            return (
+                <a href={sectionHeading.ctaLink} className={`${styles.sectionHeading__ctaLink} btn btn__secondary btn__pill`}>{sectionHeading.ctaText}</a>
             );
         }
     }
     return (
-        <div className={`container ${styles.sectionHeading} ${sectionHeading.className}`} ref={ref}>
-                {h2()}
-                {h3()}
-                {p()}
-                {a()}
+        <div className="container">
+            <div className={`${styles.sectionHeading} ${sectionHeading.className}`} ref={ref}>
+                <div>
+                    {h2()}
+                    {h3()}
+                    {description()}
+                </div>
+                {cta()}
             </div>
+        </div>
     )
 
 }
