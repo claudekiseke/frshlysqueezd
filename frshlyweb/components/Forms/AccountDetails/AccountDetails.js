@@ -25,10 +25,30 @@ const AccountDetails = ({ accountDetails, filter }) => {
         portfolio: ""
     });
 
-    getUserDetails(formData, setFormData);
+    const [formValue, setFormValue] = useState({
+        fname: "",
+        lname: "",
+        email: "",
+        password: "",
+        occupation: "",
+        industry: "",
+        industryother: "",
+        level: "",
+        city: "",
+        country: "",
+        profilepic: "",
+        twitter: "",
+        instagram: "",
+        medium: "",
+        behance: "",
+        github: "",
+        portfolio: ""
+    }); 
 
+    getUserDetails(setFormData);
+    
     const inputValue = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        setFormValue({ ...formValue, [e.target.name]: e.target.value });
     };
 
     const formSubmit = async (e) => {
@@ -60,44 +80,50 @@ const AccountDetails = ({ accountDetails, filter }) => {
                     <label className={styles.label}>Personal Details</label>
                     <div className={styles.input_group}>
                         <input
+                            className={styles.input}
                             id="account__fname"
                             type="text"
-                            value={formData.fname}
+                            value={formValue.fname}
                             onChange={inputValue}
                             name="fname"
                             placeholder="First name" />
                         <input
+                            className={styles.input}
                             id="account__lname"
                             type="text"
-                            value={formData.lname}
+                            value={formValue.lname}
                             onChange={inputValue}
                             name="lname"
                             placeholder="Last name" />
                         <input
+                            className={styles.input}
                             id="account__email"
                             type="email"
-                            value={formData.email}
+                            value={formValue.email}
                             onChange={inputValue}
                             name="email"
                             placeholder="Email address" />
                         <input
+                            className={styles.input}
                             id="account__password"
                             type="password"
-                            value={formData.password}
+                            value={formValue.password}
                             onChange={inputValue}
                             name="password"
                             placeholder="Password" />
                         <input
+                            className={styles.input}
                             id="account__city"
                             type="text"
-                            value={formData.city}
+                            value={formValue.city}
                             onChange={inputValue}
                             name="city"
                             placeholder="City" />
                         <input
+                            className={styles.input}
                             id="account__country"
                             type="text"
-                            value={formData.country}
+                            value={formValue.country}
                             onChange={inputValue}
                             name="country"
                             placeholder="Country" />
@@ -107,15 +133,17 @@ const AccountDetails = ({ accountDetails, filter }) => {
                     <label className={styles.label}>Career Details</label>
                     <div className={styles.input_group}>
                         <input
+                            className={styles.input}
                             id="account__occupation"
                             type="text"
-                            value={formData.occupation}
+                            value={formValue.occupation}
                             onChange={inputValue}
                             name="occupation"
                             placeholder="Occupation" />
                         <select
+                            className={styles.select}
                             name="industry"
-                            value={formData.industry}
+                            value={formValue.industry}
                             onChange={inputValue}
                             id="account__industry">
                             <option value="">Select industry</option>
@@ -125,8 +153,9 @@ const AccountDetails = ({ accountDetails, filter }) => {
                             <option value="audi">Audi</option>
                         </select>
                         <select
+                            className={styles.select}
                             name="level"
-                            value={formData.level}
+                            value={formValue.level}
                             onChange={inputValue}
                             id="account__level">
                             <option value="">Select level</option>
@@ -136,8 +165,9 @@ const AccountDetails = ({ accountDetails, filter }) => {
                             <option value="senior">Senior Level</option>
                         </select>
                         <input
+                            className={styles.input}
                             id="account__industryother"
-                            value={formData.industryother}
+                            value={formValue.industryother}
                             onChange={inputValue}
                             type="text"
                             name="industryother"
@@ -148,43 +178,49 @@ const AccountDetails = ({ accountDetails, filter }) => {
                     <label className={styles.label}>Network Details</label>
                     <div className={styles.input_group}>
                         <input
+                            className={styles.input}
                             id="account__twitter"
-                            value={formData.twitter}
+                            value={formValue.twitter}
                             onChange={inputValue}
                             type="text"
                             name="twitter"
                             placeholder="Twitter" />
                         <input
+                            className={styles.input}
                             id="account__instagram"
-                            value={formData.instagram}
+                            value={formValue.instagram}
                             onChange={inputValue}
                             type="text"
                             name="instagram"
                             placeholder="Instagram" />
                         <input
+                            className={styles.input}
                             id="account__medium"
-                            value={formData.medium}
+                            value={formValue.medium}
                             onChange={inputValue}
                             type="text"
                             name="medium"
                             placeholder="Medium" />
                         <input
+                            className={styles.input}
                             id="account__behance"
-                            value={formData.behance}
+                            value={formValue.behance}
                             onChange={inputValue}
                             type="text"
                             name="behance"
                             placeholder="Behance" />
                         <input
+                            className={styles.input}
                             id="account__github"
-                            value={formData.github}
+                            value={formValue.github}
                             onChange={inputValue}
                             type="text"
                             name="github"
                             placeholder="Github" />
                         <input
+                            className={styles.input}
                             id="account__portfolio"
-                            value={formData.portfolio}
+                            value={formValue.portfolio}
                             onChange={inputValue}
                             type="text"
                             name="portfolio"

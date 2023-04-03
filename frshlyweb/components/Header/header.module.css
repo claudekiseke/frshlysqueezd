@@ -1,11 +1,9 @@
 .header {
-    padding-top: 10px;
-    /* position: sticky; */
     top: 0;
     z-index: 2;
 }
 .nav {
-    padding: 20px 40px;
+    padding: 20px;
 }
 .logo {
     align-self: center;
@@ -13,10 +11,13 @@
     grid-row: 1;
     justify-self: start;
 }
-.logo img {
+.nav__homeLogo {
     filter: brightness(10);
 }
 @media screen and (min-width: 768px) {
+    .nav {
+        padding: 20px 40px;
+    }
     .logo {
         grid-column: 5 / span 4;
         justify-self: center;

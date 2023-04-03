@@ -10,19 +10,17 @@ const CommunityStats = ({ communityStats }) => {
         const ctaText = item.fields.ctaText;
 
         return (
-                <div className={styles.communityStats__communityStat} key={index}>
-                    <h4 className={styles.communityStats__total}>{total}</h4>
-                    <p className={styles.communityStats__title}>{title}</p>
-                    <Link href={ctaLink} className={styles.communityStats__ctaLink}>{ctaText}</Link>
-                </div>
+            <div className={styles.communityStats__communityStat} key={index}>
+                <h4 className={styles.communityStats__total}>{total}</h4>
+                <p className={styles.communityStats__title}>{title}</p>
+                <Link href={ctaLink} className={styles.communityStats__ctaLink}>{ctaText}</Link>
+            </div>
         )
     });
 
     return (
-        <div className="container">
-            <div className={styles.communityStats}>
-                {stat}
-            </div>
+        <div className={styles.communityStats}>
+            {stat}
         </div>
     )
 }

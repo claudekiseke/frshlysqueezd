@@ -4,11 +4,32 @@
     padding: 120px 0 200px;
 }
 
+.heading {
+    background-color: var(--frshly-orange);
+    margin-bottom: 30px;
+    padding: 30px 0;
+}
+
 .homeContent {
     grid-area: 2 / 1 / 2 / span 6;
 }
 
-.pageTitle h2 {
+.pageMeta {
+    grid-column: 1 / span 6;
+}
+
+.pageMeta span {
+    color: var(--neutral);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.pageTagline > * {
+    display: inline-block;
+}
+
+.pageTitle h2,
+.pageTagline h2 {
     color: var(--neutral);
     font-size: 4rem;
     font-weight: 500;
@@ -16,7 +37,8 @@
     margin: 20px 0 40px;
 }
 
-.pageTitle h2 b {
+.pageTitle h2 b,
+.pageTagline h2 b {
     color: var(--light-yellow);
     font-family: 'Kristi';
     font-size: 8rem;
@@ -39,14 +61,15 @@
     margin: 0;
 }
 
-.pageDescription {
+.pageDescription,
+.pageDesc {
     color: var(--neutral);
     font-size: 1.6rem;
 }
 
 @media only screen and (min-width: 768px) {
     .homeHeading {
-        margin-top: -83px;
+        margin: -83px 0 30px;
         padding: 183px 0 200px;
     }
     
@@ -61,119 +84,3 @@
         margin: 20px 0 60px;
     }
 }
-
-/* .heading {
-    background-color: var(--blue);
-    color: var(--black);
-    margin-bottom: 30px;
-    padding: 20px 0 30px;
-}
-.homeheading {
-    background-color:var(--frshly-orange);
-    }
-    
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }    
-.pagemeta {
-    grid-area: 1 / 1 / 1 / span 6;
-}
-.pagetitle {
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin: 0 0 20px 5px;
-    z-index: 2;
-}
-.pageParent {
-    color: var(--black);
-    font-weight: 600;
-    text-decoration: none;
-}
-.pagetagline {
-    display: flex;
-    gap: 5px;
-}
-.pagetagline h2 {
-    color: var(--neutral);;
-    font-family: 'Poppins';
-    font-size: 3.2rem;
-    font-weight: 400;
-    line-height: 3.2rem;
-    margin: 0 0 20px;
-    position: relative;
-}
-.pagetagline h2 b {
-    font-size: 1em;
-    font-weight: 400;
-}
-.pagetagline h2 b {
-    color: var(--light-yellow);
-    font-family: 'Kristi';
-}
-.pagetagline h2::after {
-    content: '';
-    background-image: url(https://images.ctfassets.net/xa1los3yndi8/6jpJmMtpChAqxnlTeMBL7y/e535ea98459666ad6bb12b9ca3b61d03/together.svg);
-    background-repeat: no-repeat;
-    width: 241px;
-    height: 107px;
-    display: inline-block;
-    position: relative;
-    left: 8px;
-    top: 35px;
-    line-height: 0;
-    margin-top: -50px;
-}
-.pagedesc, .homeimg {
-    grid-column: 1 / span 6;
-    align-self: center;
-}
-.homedesc p {
-    color: var(--black);
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-align: center;
-}
-
-@media only screen and (min-width: 768px) {
-    .heading {
-        margin-bottom: 60px;
-    }
-    .pagetagline h2 {
-        font-size: 4.8rem;
-        line-height: 5.2rem;
-        margin: 0;
-        z-index: 1;
-    }
-    .pagetagline h2 b {
-        font-size: 8rem;
-    }
-    .heading {
-        padding: 40px 40px 60px;
-    }
-    .homemeta,
-    .homedesc {
-        grid-column: 1 / span 10;
-    }
-    .homeheading {
-        padding: 195px 0;
-        margin-bottom: 0;
-    }
-    .homemeta {
-        grid-row: 2;
-    }
-    .homedesc {
-        grid-row: 3;
-    }
-    .pagedesc {
-        grid-column: 7 / span 6;
-    }
-} */

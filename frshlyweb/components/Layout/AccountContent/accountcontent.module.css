@@ -1,3 +1,8 @@
 .content {
-    grid-column: 5 / span 8;
+    grid-column: 1 / span 6;
+}
+@media screen and (min-width: 768px) {
+    .content {
+        grid-column: 5 / span 8;
+    }
 }

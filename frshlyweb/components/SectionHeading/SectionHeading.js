@@ -5,14 +5,12 @@ const SectionHeading = ({ sectionHeading, filter }) => {
     const ref = useRef(null);
 
     useEffect(() => {
-        if (ref.current) {
-            if ((filter == 'all') || (ref.current.classList.contains(filter))) {
-                ref.current.classList.remove('show-grid');
-                ref.current.className += " " + 'show-grid';
-            } else {
-                ref.current.classList.remove('show-grid');
-            }
-        }
+        console.log(ref.current.className);
+        // if (ref.current) {
+        //     if (sectionHeading.className.includes('full-width') && (ref.current.classList.contains(styles.sectionHeading__fullWidth))) {
+        //         ref.current.className += " " + styles.sectionHeading__fullWidth;
+        //     }
+        // }
     });
 
     const h2 = () => {
@@ -46,8 +44,8 @@ const SectionHeading = ({ sectionHeading, filter }) => {
         }
     }
     return (
-        <div className="container">
-            <div className={`${styles.sectionHeading} ${sectionHeading.className}`} ref={ref}>
+        <>
+            <div className={styles.sectionHeading} ref={ref}>
                 <div>
                     {h2()}
                     {h3()}
@@ -55,7 +53,7 @@ const SectionHeading = ({ sectionHeading, filter }) => {
                 </div>
                 {cta()}
             </div>
-        </div>
+        </>
     )
 
 }
