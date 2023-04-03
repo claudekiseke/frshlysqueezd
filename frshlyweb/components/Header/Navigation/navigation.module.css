@@ -27,7 +27,7 @@
     color: var(--frshly-orange);
 }
 .nav__homeItem a {
-    color: var(--neutral);
+    color: var(--frshly-orange);
 }
 .loginLinks {
     border: 1px solid var(--frshly-orange);
@@ -66,5 +66,8 @@
     }
     .nav__item a {
         font-size: 1.4rem;
+    }
+    .nav__homeItem a {
+        color: var(--neutral);
     }
 }

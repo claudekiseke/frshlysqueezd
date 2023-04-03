@@ -30,7 +30,7 @@ const Header = ({ logo, navigation }) => {
               />
             </Link>
           </div>
-          <div className={`mobile-only ${styles.burgerMenu}`} onClick={toggleMenu}>
+          <div className={`mobile-only ${styles.burgerMenu}${!pageName ? ' ' + styles.homeBurgerMenu : ''}`} onClick={toggleMenu}>
             <svg viewBox="0 0 40 35" width="25" height="25">
               <rect width="40" height="5" rx="3"></rect>
               <rect y="15" width="40" height="5" rx="3"></rect>
