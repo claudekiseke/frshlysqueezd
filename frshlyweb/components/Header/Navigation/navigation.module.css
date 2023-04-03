@@ -46,17 +46,6 @@
 .loginLinks:nth-child(even) a {
     color: var(--frshly-orange);
 }
-.loginLinks:nth-child(odd):hover {
-    background-color: var(--clamp-yellow);
-    border: 1px solid var(--clamp-yellow);
-}
-.loginLinks:nth-child(even):hover {
-    border: 1px solid var(--brown);
-}
-.loginLinks:nth-child(odd):hover a,
-.loginLinks:nth-child(even):hover a {
-    color: var(--brown);
-}
 .show {
     display: block;
 }
@@ -68,6 +57,29 @@
         font-size: 1.4rem;
     }
     .nav__homeItem a {
+        color: var(--neutral);
+    }
+    .nav__homeItem.loginLinks:nth-child(odd) {
+        background-color: var(--neutral);
+    }
+    .nav__homeItem.loginLinks:nth-child(odd) a {
+        color: var(--frshly-orange);
+    }
+    .nav__homeItem.loginLinks:nth-child(even) {
+        border: 1px solid var(--neutral);
+    }
+    .nav__homeItem.loginLinks:nth-child(even) a {
+        color: var(--neutral);
+    }
+    .loginLinks:nth-child(odd):hover {
+        background-color: var(--orange-alt);
+        border: 1px solid var(--orange-alt-1);
+    }
+    .loginLinks:nth-child(even):hover {
+        border: 1px solid var(--orange-alt-1);
+    }
+    .loginLinks:nth-child(odd):hover a,
+    .loginLinks:nth-child(even):hover a {
         color: var(--neutral);
     }
 }
