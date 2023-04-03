@@ -64,8 +64,7 @@
     margin: 0;
 }
 
-.pageDescription,
-.pageDesc {
+.pageDescription{
     color: var(--neutral);
     font-size: 1.6rem;
 }
