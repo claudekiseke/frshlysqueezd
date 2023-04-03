@@ -58,9 +58,7 @@ const PageHeading = ({ page, featuredRole }) => {
                     </span>
                     <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2><b>{fname}</b></h2></div>
                 </div>
-                <div className={styles.pageDesc}>
-                {documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}
-                </div>
+                <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
             </div>
         </div>
 
@@ -72,9 +70,7 @@ const PageHeading = ({ page, featuredRole }) => {
                     <Breadcrumb parentLink={parentLink} link={link} styles={styles} />
                     <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
                 </div>
-                <div className={styles.pageDesc}>
-                    {page.fields.pageHeading.fields.pageDescription}
-                </div>
+                <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
             </div>
         </div>
 
