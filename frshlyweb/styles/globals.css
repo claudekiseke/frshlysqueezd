@@ -72,7 +72,7 @@ input,
 select,
 textarea {
   background-color: var(--neutral);
-  border: 1px solid var(--light-brown);
+  border: 1px solid var(--dark-neutral);
   border-radius: 30px;
   font-family: inherit;
   margin-bottom: 20px;
