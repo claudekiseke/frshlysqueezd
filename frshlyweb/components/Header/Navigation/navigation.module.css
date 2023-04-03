@@ -16,6 +16,7 @@
 }
 .nav__item a {
     color: var(--frshly-orange);
+    font-size: 1.8rem;
     text-decoration: none;
     transition: 1.5s color ease;
 }
@@ -62,5 +63,8 @@
 @media screen and (min-width: 768px) {
     .nav__list {
         display: flex;
+    }
+    .nav__item a {
+        font-size: 1.4rem;
     }
 }

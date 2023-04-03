@@ -9,11 +9,19 @@
     height: 100%;
     z-index: 99;
 }
+
 .modalContent {
      background-color: var(--dark-neutral);
      padding: 20px;
-     width: 50vw;
+     width: 80vw;
 }
+
 .modalClose{
     cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .modalContent {
+        width: 50vw;
+    }
 }
