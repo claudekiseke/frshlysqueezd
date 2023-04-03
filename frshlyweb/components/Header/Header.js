@@ -1,10 +1,13 @@
 import AnnouncementBar from '../AnnouncementBar/AnnouncementBar';
 import Navigation from './Navigation/Navigation';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './header.module.css'
 
 const Header = ({ logo, navigation }) => {
+
+  const pageName = useRouter().pathname.slice(1);
   const logoUrl = "https:" + logo.fields.file.url;
   const navLinks = navigation.items;
 
@@ -13,7 +16,7 @@ const Header = ({ logo, navigation }) => {
       {/* <AnnouncementBar /> */}
       <header className={styles.header}>
         <nav className={`${styles.nav} container`}>
-            <div className={`${styles.logo} ${styles.navItem}`}>
+            <div className={`${styles.logo}${!pageName ? ' ' + styles.nav__homeLogo : ''}`}>
               <Link href="/">
                 <Image
                   src={logoUrl}

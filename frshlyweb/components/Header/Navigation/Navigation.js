@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { auth, signOut, onAuthStateChanged } from "../../../firebase/clientApp";
 import styles from './navigation.module.css';
 
 const Navigation = ({ navLinks }) => {
 
+    const pageName = useRouter().pathname.slice(1);
     const [isUser, setUser] = useState(false);
 
     useEffect(() => {
@@ -51,7 +53,7 @@ const Navigation = ({ navLinks }) => {
                     return (
                         <li
                             key={index}
-                            className={`${styles.nav__item}${className ? ' ' + loginLinks() : ''}`}
+                            className={`${styles.nav__item}${className ? ' ' + loginLinks() : ''}${!pageName ? ' ' + styles.nav__homeItem : ''}`}
                             onClick={handleClick}>
                             <Link
                                 href={linkUrl}

@@ -1,6 +1,7 @@
 .nav__list {
     align-self: center;
     display: none;
+    gap: 20px;
     grid-row: 1;
     list-style: none;
     padding: 0;
@@ -13,17 +14,8 @@
     grid-column: span 4;
     justify-self: end;
 }
-.nav__item {
-    padding: 0 10px;
-}
-.nav__list:first-of-type .nav__item:first-child {
-    padding-left: 0;
-}
-.nav__list:first-of-type .nav__item:last-child {
-    padding-right: 0;
-}
 .nav__item a {
-    color: var(--neutral);
+    color: var(--frshly-orange);
     text-decoration: none;
     transition: 1.5s color ease;
 }
@@ -33,12 +25,15 @@
 .nav__item a:hover {
     color: var(--frshly-orange);
 }
+.nav__homeItem a {
+    color: var(--neutral);
+}
 .loginLinks {
     border: 1px solid var(--frshly-orange);
     border-radius: 20px;
     display: none;
     padding: 5px 28px;
-    margin: 0 10px;
+    margin-bottom: 0;
     transition: .5s all ease;
 }
 .loginLinks:nth-child(odd) {

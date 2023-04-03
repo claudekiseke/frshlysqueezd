@@ -1,6 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import AnnouncementBar from '../AnnouncementBar/AnnouncementBar';
 import styles from './mailingListSection.module.css';
-import MailchimpSubscribe from "react-mailchimp-subscribe"
 
 const url = "https://frshlysqueezd.us7.list-manage.com/subscribe/post?u=7f5f44f058739ef29780dca63&amp;id=628c0ddafe&amp;f_id=00a684e3f0";
 
@@ -56,8 +57,11 @@ const MailingListSection = ({ mailingListSection }) => {
     return (
         <div className={styles.weekly}>
         <div className="container">
-            <div className={styles.title}>{documentToReactComponents(mailingListSection.mailingTitle)}</div>
-            <p className={styles.desc}>{mailingListSection.description}</p>
+            <div className={styles.weekly__text}>
+                <AnnouncementBar />
+            </div>
+            {/* <div className={styles.title}>{documentToReactComponents(mailingListSection.mailingTitle)}</div>
+            <p className={styles.desc}>{mailingListSection.description}</p> */}
             <div className={styles.mail}>
                 <MailchimpSubscribe
                     url={url}

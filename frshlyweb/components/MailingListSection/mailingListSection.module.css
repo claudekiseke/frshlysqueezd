@@ -1,6 +1,7 @@
 .weekly {
-    background-color: var(--purple);
-    margin-bottom: 60px;
+    background-color: var(--frshly-orange);
+    grid-column: 1 / span 6;
+    margin: 0 -20px 60px;
     padding: 20px 0;
 }
 .title {
@@ -8,6 +9,7 @@
     align-self: center;
 }
 .title h2 {
+    color: var(--neutral);
     font-family: 'Poppins';
     font-size: 2.4rem;
     font-weight: 300;
@@ -19,8 +21,14 @@
     font-size: 4.8rem;
     font-weight: normal;
 }
+.weekly__text {
+    align-items: center;
+    display: flex;
+    grid-column: span 5;
+}
 .desc {
     align-self: center;
+    color: var(--neutral);
     grid-column: span 6;
 }
 .mail {
@@ -47,13 +55,16 @@
 }
 .input:nth-child(n+2) {
     border-radius: 0;
-    border-left: 1px solid var(--purple);
+    border-left: 1px solid var(--frshly-orange);
 }
 .input:last-child {
     border-radius: 0 30px 30px 0;
 }
 @media only screen and (min-width: 768px) {
     .weekly {
+        border-radius: 20px;
+        grid-column: 1 / span 12;
+        margin: 0 0 60px;
         padding: 60px;
     }
     .title {
@@ -61,7 +72,7 @@
     }
     .desc {
         align-self: center;
-        border-left: 1px solid var(--black);
+        border-left: 1px solid var(--neutral);
         grid-column: span 3;
         padding-left: 20px;
     }
