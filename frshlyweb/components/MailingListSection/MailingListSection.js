@@ -57,11 +57,8 @@ const MailingListSection = ({ mailingListSection }) => {
     return (
         <div className={styles.weekly}>
         <div className="container">
-            <div className={styles.weekly__text}>
-                <AnnouncementBar />
-            </div>
-            {/* <div className={styles.title}>{documentToReactComponents(mailingListSection.mailingTitle)}</div>
-            <p className={styles.desc}>{mailingListSection.description}</p> */}
+            <div className={styles.title}>{documentToReactComponents(mailingListSection.mailingTitle)}</div>
+            <p className={styles.desc}>{mailingListSection.description}</p>
             <div className={styles.mail}>
                 <MailchimpSubscribe
                     url={url}
