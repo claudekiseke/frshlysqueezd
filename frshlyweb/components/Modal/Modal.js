@@ -53,7 +53,7 @@ const Modal = ({ modal, showModal, setShowModal, className, linkTitle, submitRes
                         </span>
                         <h3 className={styles.modalTitle}>{modal.fields.modalTitle}</h3>
                         <div className={styles.modalText}>{documentToReactComponents(modal.fields.modalContent)}</div>
-                        {/* <form
+                        <form
                             className={formStyles.contactform__form}
                             id="contact__form"
                             onSubmit={formSubmit}
@@ -87,7 +87,7 @@ const Modal = ({ modal, showModal, setShowModal, className, linkTitle, submitRes
                         value={submitResource.fields.submitValue}
                         disabled={loading}
                     />
-                        </form> */}
+                        </form>
                     </div>
                 </div>
             )}
