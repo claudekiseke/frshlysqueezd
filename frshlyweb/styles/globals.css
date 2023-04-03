@@ -98,6 +98,7 @@ textarea {
   font-weight: 600;
   margin-bottom: 20px;
   padding: 20px;
+  -webkit-appearance: none;
 }
 
 .btn:disabled {
