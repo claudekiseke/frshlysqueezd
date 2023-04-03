@@ -105,15 +105,15 @@ textarea {
 }
 
 .btn__primary {
-  background-color: var(--black);
-  border-color: var(--black);
+  background-color: var(--frshly-orange);
+  border-color: var(--orange-alt);
   color: var(--neutral);
   transition: .5s all ease;
 }
 
 .btn__primary:hover {
-  background-color: var(--frshly-orange);
-  border-color: var(--frshly-orange);
+  background-color: var(--orange-alt);
+  border-color: var(--orange-alt-1);
 }
 
 .btn__primary:disabled {
