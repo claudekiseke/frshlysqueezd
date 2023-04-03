@@ -67,8 +67,6 @@ export default function Home({ page, logo, featuredRole, carousel, communityStat
     <>
       <Head>
         <title>{`Frshly Squeezd ${pageHeading.fields.pageTitle ? '- ' + pageHeading.fields.pageTitle : ''}`}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} carousel={carousel} page={page} featuredRole={featuredRole} />
