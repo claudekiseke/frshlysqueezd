@@ -1,0 +1,17 @@
+.noAccess {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 10px);
+    z-index: 999;
+    background: linear-gradient(179.85deg, var(--neutral) 0.13%, rgba(46, 16, 2, 0) 0.14%, var(--neutral) 51.56%, var(--neutral) 99.87%);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Note: backdrop-filter has minimal browser support */
+}
+.noAccessContent {
+   
+}

@@ -38,7 +38,7 @@ const Header = ({ logo, navigation }) => {
             </svg>
           </div>
           <div className={`mobile-only ${styles.mobileMenu}${isActive ? " " + styles.active : ""}`}>
-            <span class={styles.menuClose} aria-label="Close Menu" onClick={toggleMenu}>×</span>
+            <span className={styles.menuClose} aria-label="Close Menu" onClick={toggleMenu}>×</span>
             <div className={styles.menuItems}>
               <Navigation navLinks={navLinks} />
             </div>

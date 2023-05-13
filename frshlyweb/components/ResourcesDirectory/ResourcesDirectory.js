@@ -1,16 +1,22 @@
 import Resource from "./Resource";
 import styles from './resources.module.css';
 
-const ResourcesDirectory = ({ resources, overlay, filter }) => {
+const ResourcesDirectory = ({ access, resources, overlay, filter }) => {
 
     const resourceItems = resources.items;
     const resourceItem =  resourceItems.map((item, index) => {
         const resourceFields = item.fields;
-        return <Resource key={index} overlay={overlay} resourceFields={resourceFields} filter={filter} />;
+        if (access) {
+            return <Resource key={index} overlay={overlay} resourceFields={resourceFields} filter={filter} />;
+        } else {
+            if (index < 3) {
+            return <Resource key={index} overlay={overlay} resourceFields={resourceFields} filter={filter} />;
+            }
+        }
     });
 
     return (
-        <div className={styles.resources}>
+        <div className={`${styles.resources}`}>
             {resourceItem}
         </div>        
     )

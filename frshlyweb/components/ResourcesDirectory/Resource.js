@@ -1,10 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
 import styles from './resources.module.css';
 
-const Resource = ({ resourceFields, overlay, filter }) => {
+const Resource = ({ resourceFields, overlay, filter, access }) => {
     const ref = useRef(null);
+
 
     useEffect(() => {
         if (ref.current) {
@@ -14,7 +15,7 @@ const Resource = ({ resourceFields, overlay, filter }) => {
                 ref.current.classList.remove(styles.resource__show);
             }
         }
-    });  
+    });
 
     const title = resourceFields.resourceTitle;
     const url = resourceFields.url;
@@ -27,7 +28,7 @@ const Resource = ({ resourceFields, overlay, filter }) => {
             const image = resourceFields.image.fields.file.url;
             const width = resourceFields.image.fields.file.details.image.width;
             const height = resourceFields.image.fields.file.details.image.height;
-            
+
             return (
                 <Image
                     src={`https:${image}`}
@@ -41,7 +42,7 @@ const Resource = ({ resourceFields, overlay, filter }) => {
             const width = overlay.fields.file.details.image.width;
             const height = overlay.fields.file.details.image.height;
 
-            return(
+            return (
                 <Image
                     src={`https:${image}`}
                     width={width}
@@ -52,18 +53,34 @@ const Resource = ({ resourceFields, overlay, filter }) => {
         }
     }
 
-    return (
-        <div className={`${styles.resource} ${topic} ${audience}`} ref={ref}>
-            <div className={styles.resource__img}>
-                {image()}
+    if (access) {
+        return (
+            <div className={`${styles.resource} ${topic} ${audience} ${!access ? styles.blockText : ''}`} ref={ref}>
+                <div className={styles.resource__img}>
+                    {image()}
+                </div>
+                <div className={styles.resource__body}>
+                    <h3 className={styles.resource__title}>{title}</h3>
+                    <div className={styles.resource__text}>{documentToReactComponents(desc)}</div>
+                    <a className={styles.resource__url} href={url} target="_blank" rel="noreferrer">Visit Site {`>`}</a>
+                </div>
             </div>
-            <div className={styles.resource__body}>
-                <h3 className={styles.resource__title}>{title}</h3>
-                <div className={styles.resource__text}>{documentToReactComponents(desc)}</div>
-                <a className={styles.resource__url} href={url} target="_blank" rel="noreferrer">Visit Site {`>`}</a>
+        );
+    } else {
+        return (
+            <div className={`${styles.resource} ${topic} ${audience} ${!access ? styles.blockText : ''}`} ref={ref}>
+                <div className={styles.resource__img}>
+                    {image()}
+                </div>
+                <div className={styles.resource__body}>
+                    <h3 className={styles.resource__title}>Log in to view</h3>
+                    <div className={styles.resource__text}>You need to be logged in to access this resource!</div>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+
 }
 
 export default Resource;

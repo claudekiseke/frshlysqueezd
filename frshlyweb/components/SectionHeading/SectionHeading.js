@@ -4,15 +4,6 @@ import styles from './sectionheading.module.css';
 const SectionHeading = ({ sectionHeading, filter }) => {
     const ref = useRef(null);
 
-    useEffect(() => {
-        console.log(ref.current.className);
-        // if (ref.current) {
-        //     if (sectionHeading.className.includes('full-width') && (ref.current.classList.contains(styles.sectionHeading__fullWidth))) {
-        //         ref.current.className += " " + styles.sectionHeading__fullWidth;
-        //     }
-        // }
-    });
-
     const h2 = () => {
         if (sectionHeading.h2Heading) {
             return (

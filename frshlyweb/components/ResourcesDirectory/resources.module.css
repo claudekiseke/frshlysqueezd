@@ -1,3 +1,6 @@
+.resourceDirectory {
+    position: relative;
+}
 .resources {
     display: grid;
     grid-column: span 6;
@@ -51,6 +54,13 @@
 .resource:hover .resource__url:hover {
     color: var(--brown);
 }
+.blockAccess {
+    max-height: 100vh;
+}
+.blockText {
+    user-select: none;
+}
+
 @media only screen and (min-width: 768px) {
     .resources {
         grid-template-columns: repeat(3, 1fr);
