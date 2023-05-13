@@ -7,6 +7,9 @@ import ResourcesDirectory from '../components/ResourcesDirectory/ResourcesDirect
 import Modal from "../components/Modal/Modal";
 import Footer from '../components/Footer/Footer';
 import { createClient } from 'contentful';
+import { auth, onAuthStateChanged } from "../firebase/clientApp";
+import Access from "../components/Access/Access";
+import styles from '../components/ResourcesDirectory/resources.module.css';
 
 export async function getStaticProps() {
 
@@ -41,12 +44,25 @@ export async function getStaticProps() {
 }
 
 const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links, modal, submitResource }) => {
-// console.log(submitResource);
+  const [access, setAccess] = useState(false);
   const [isFilter, setFilter] = useState('all');
   const [showModal, setShowModal] = useState(false);
   const pageContent = page.fields;
   const pageHeading = pageContent.pageHeading;
   const mainContent = pageContent.mainContent;
+
+  
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        console.log('logged in');
+        setAccess(true);
+        console.log(access);
+    } else {
+        console.log('not logged in');
+        setAccess(false);
+        console.log(access);
+    }
+});
 
   const section = mainContent.map((item, index) => {
     let component;
@@ -57,7 +73,7 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links,
         break;
 
       case 'resources':
-        component = <ResourcesDirectory key={mainContent[index].sys.id} overlay={overlay} resources={resourcesDirectory} filter={isFilter} />;
+        component = <ResourcesDirectory key={mainContent[index].sys.id} access={access} overlay={overlay} resources={resourcesDirectory} filter={isFilter} />;
         break;
     }
 
@@ -73,10 +89,12 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links,
       </Head>
       <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
-      <div className="container">
+      <div className={`container` + ` ${styles.resourceDirectory}`}>
         {section}
-      </div>
+      <Access navigation={navigation} />
+      
       <Modal />
+      </div>
       <Footer />
     </>
   )

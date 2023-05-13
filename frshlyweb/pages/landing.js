@@ -85,8 +85,8 @@ export default function Landing() {
             </Head>
             <div className={`container ${styles.container}`}>
                 <header className={styles.header}>
-                    <a href="mailto:hello@frshlysqueezd.com" class={`btn btn__secondary ${styles.btn} ${styles.btn__secondary}`}>Get in touch</a>
-                    <a href="https://www.linkedin.com/company/frshlysqueezd" target="_blank" rel="noreferrer" class={`btn btn__primary ${styles.btn} ${styles.btn__primary}`}>Follow us on LinkedIn</a>
+                    <a href="mailto:hello@frshlysqueezd.com" className={`btn btn__secondary ${styles.btn} ${styles.btn__secondary}`}>Get in touch</a>
+                    <a href="https://www.linkedin.com/company/frshlysqueezd" target="_blank" rel="noreferrer" className={`btn btn__primary ${styles.btn} ${styles.btn__primary}`}>Follow us on LinkedIn</a>
                 </header>
 
                 <main div className={styles.main}>

@@ -118,9 +118,8 @@ export const logout = () => {
 };
 
 const getUserDetails = async (setFormData) => {
-  const user = auth.currentUser;
-
     onAuthStateChanged(auth, async (user) => {
+      if (user) {
       doc(db, "users", user.uid)
       const docRef = doc(db, "users", user.uid);
 
@@ -130,6 +129,7 @@ const getUserDetails = async (setFormData) => {
         } catch (e) {
           console.log("dOENS:", e);
       }
+    }
     }, []);
 };
 
