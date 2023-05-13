@@ -6,7 +6,7 @@
   --light-brown: #A88676;
   --neutral: #FCF8F7;
   --dark-neutral: #F9F2F0;
-  --grey: #F7F7F7;
+  --grey: #FDFDFD;
   --purple: #EDC0ED;
   --blue: #D5E8E9;
   --green: #B4E2AF;
@@ -72,7 +72,7 @@ input,
 select,
 textarea {
   background-color: var(--neutral);
-  border: 1px solid var(--light-brown);
+  border: 1px solid var(--dark-neutral);
   border-radius: 30px;
   font-family: inherit;
   margin-bottom: 20px;
@@ -98,6 +98,7 @@ textarea {
   font-weight: 600;
   margin-bottom: 20px;
   padding: 20px;
+  -webkit-appearance: none;
 }
 
 .btn:disabled {
@@ -105,15 +106,15 @@ textarea {
 }
 
 .btn__primary {
-  background-color: var(--black);
-  border-color: var(--black);
+  background-color: var(--frshly-orange);
+  border-color: var(--orange-alt);
   color: var(--neutral);
   transition: .5s all ease;
 }
 
 .btn__primary:hover {
-  background-color: var(--frshly-orange);
-  border-color: var(--frshly-orange);
+  background-color: var(--orange-alt);
+  border-color: var(--orange-alt-1);
 }
 
 .btn__primary:disabled {
@@ -150,10 +151,6 @@ textarea {
 
 .show {
   display: block !important;
-}
-
-.show-grid {
-  display: grid !important;
 }
 
 @media only screen and (min-width: 768px) {

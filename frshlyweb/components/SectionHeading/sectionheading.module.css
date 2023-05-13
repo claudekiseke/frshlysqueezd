@@ -1,10 +1,15 @@
 .sectionHeading {
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 15px;
     grid-column: span 6;
     margin-bottom: 20px;
-    align-items: flex-start;
+    text-align: center;
+}
+
+.sectionHeading__fullWidth {
+
 }
 
 .sectionHeading__h3 {
@@ -32,55 +37,9 @@
 @media screen and (min-width: 768px) {
     .sectionHeading {
         flex-direction: row;
+        gap: 20px;
         grid-column: span 12;
+        justify-content: space-between;
+        text-align: left;
     }
 }
-/* .sectionHeading {
-    display: none;
-    grid-template-columns: 1fr;
-    margin-bottom: 30px;
-}
-.titleH2 {
-    background-color: var(--neutral);
-    display: inline-block;
-    font-family: 'Poppins';
-    font-weight: 300;
-    font-size: 3.2rem;
-    line-height: 3.8rem;
-    margin-bottom: 15px;
-}
-.titleH3 {
-    background-color: var(--neutral);
-    font-weight: 600;
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-.desc {
-    color: var(--brown);
-    margin-top: 0;
-}
-.ctaLink {
-    justify-self: start;
-    margin-bottom: 0;
-}
-@media screen and (min-width: 768px) {
-    .sectionHeading {
-        grid-template-columns: repeat(6, 1fr);
-    }
-    .titleH2 {
-        grid-area: 1 / 1 / 1 / span 6;
-        margin: 0;
-    }
-    .titleH3 {
-        grid-area: 1 / 1 / 1 / span 6;
-        margin: 0;
-    }
-    .desc {
-        grid-area: 2 / 1 / 2 / span 6;
-        margin-bottom: 15px;
-    }
-    .ctaLink {
-        grid-area: 1 / 10 / 1 / span 3;
-        justify-self: end;
-    }
-} */

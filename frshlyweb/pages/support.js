@@ -86,7 +86,9 @@ const Support = ({ logo, navigation, page, communityStats, supportTabs }) => {
       </Head>
       <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
-      {section}
+      <div className="container">
+        {section}
+      </div>
       <Footer />
     </>
   )

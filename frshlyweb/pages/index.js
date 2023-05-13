@@ -51,9 +51,9 @@ export default function Home({ page, logo, featuredRole, carousel, communityStat
         component = <SectionHeading key={mainContent[index].sys.id} sectionHeading={mainContent[index].fields} />;
         break;
 
-      // case 'mailingListSection':
-      //   component = <MailingListSection key={mainContent[index].sys.id} mailingListSection={mainContent[index].fields} />;
-      //   break;
+      case 'mailingListSection':
+        component = <MailingListSection key={mainContent[index].sys.id} mailingListSection={mainContent[index].fields} />;
+        break;
 
       case 'communityStats':
       component = <CommunityStats key={mainContent[index].sys.id} communityStats={communityStats} />;
@@ -67,12 +67,12 @@ export default function Home({ page, logo, featuredRole, carousel, communityStat
     <>
       <Head>
         <title>{`Frshly Squeezd ${pageHeading.fields.pageTitle ? '- ' + pageHeading.fields.pageTitle : ''}`}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} carousel={carousel} page={page} featuredRole={featuredRole} />
-      {section}
+      <div className="container">
+        {section}
+      </div>
       <Footer />
     </>
   );

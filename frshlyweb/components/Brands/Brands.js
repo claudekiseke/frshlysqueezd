@@ -22,12 +22,10 @@ const Brands = ({ brand }) => {
     });
 
     return (
-        <div className="container">
             <div className={styles.brands}>
                 <h2 className={styles.brands__title}>{brand.brandsTitle}</h2>
                 <div className={styles.brands__images}>{brandImg}</div>
             </div>
-        </div>
     );
 }
 

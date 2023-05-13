@@ -27,7 +27,7 @@ const SupportTabs = ({ filter, supportTabs }) => {
     });
 
     return (
-        <div className={`container ${styles.supporttabs} ${supportTabs.fields.className}`} ref={ref}>
+        <div className={`${styles.supporttabs} ${supportTabs.fields.className}`} ref={ref}>
                 {tab}
         </div>
     )

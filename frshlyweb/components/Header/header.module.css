@@ -1,11 +1,9 @@
 .header {
-    padding-top: 10px;
-    /* position: sticky; */
     top: 0;
     z-index: 2;
 }
 .nav {
-    padding: 20px 40px;
+    padding: 20px;
 }
 .logo {
     align-self: center;
@@ -13,10 +11,59 @@
     grid-row: 1;
     justify-self: start;
 }
-.logo img {
+.nav__homeLogo {
     filter: brightness(10);
 }
+.burgerMenu {
+    display: flex;
+    grid-column: 6;
+    justify-content: flex-end;
+}
+.burgerMenu rect {
+    fill: var(--frshly-orange)
+}
+.burgerMenu.homeBurgerMenu rect {
+    fill: var(--neutral)
+}
+.mobileMenu {
+    background-color: var(--neutral);
+    box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    justify-content: center;
+    padding: 30px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 60vw;
+    z-index: 999;
+    transition: transform 0.5s ease-out;
+    transform: translateX(100%);
+}
+  
+.mobileMenu.active {
+    transform: translateX(0);
+}
+.menuClose {
+    align-self: flex-end;
+    color: var(--frshly-orange);
+    font-size: 4rem;
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+.mobileMenu ul {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    text-align: center;
+}
 @media screen and (min-width: 768px) {
+    .nav {
+        padding: 20px 40px;
+    }
     .logo {
         grid-column: 5 / span 4;
         justify-self: center;

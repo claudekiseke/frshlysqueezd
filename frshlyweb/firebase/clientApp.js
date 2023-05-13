@@ -117,27 +117,20 @@ export const logout = () => {
   });;
 };
 
-const getUserDetails = async (formData, setFormData) => {
-  // rest of component code
-  // const user = auth.currentUser;
-  const allValuesEmpty = Object.values(formData).every(value => value === '' || value === null || value === undefined);
+const getUserDetails = async (setFormData) => {
+  const user = auth.currentUser;
 
-console.log(allValuesEmpty)
-// if (user) {
-//   console.log('logged in')
-// }
-  
-    // onAuthStateChanged(auth, async (user) => {
-    //   doc(db, "users", user.uid)
-    //   const docRef = doc(db, "users", user.uid);
+    onAuthStateChanged(auth, async (user) => {
+      doc(db, "users", user.uid)
+      const docRef = doc(db, "users", user.uid);
 
-    //   try {
-    //       const docSnap = await getDoc(docRef);
-    //         setFormData(docSnap.data());
-    //     } catch (e) {
-    //       console.log("dOENS:", e);
-    //   }
-    // }, []);
+      try {
+          const docSnap = await getDoc(docRef);
+            setFormData(docSnap.data());
+        } catch (e) {
+          console.log("dOENS:", e);
+      }
+    }, []);
 };
 
 const contactSubmit = async (name, company, email, message) => {

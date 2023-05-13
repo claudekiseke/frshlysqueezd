@@ -32,7 +32,7 @@ const Team = ({ team }) => {
     });
 
     return (
-        <div className={`container ${styles.teamMembers}`}>
+        <div className={styles.teamMembers}>
                 {teamMember}
         </div>
     )

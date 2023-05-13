@@ -52,15 +52,13 @@ const PageHeading = ({ page, featuredRole }) => {
 
         <div className={styles.heading}>
             <div className="container">
-                <div className={styles.pagemeta}>
-                    <span className={styles.pagetitle}>
-
-                        {page.fields.pageHeading.fields.pageTitle}</span>
-                    <div className={styles.pagetagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2>{fname}</h2></div>
+                <div className={styles.pageMeta}>
+                    <span className={styles.pageTitle}>
+                        {page.fields.pageHeading.fields.pageTitle}
+                    </span>
+                    <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2><b>{fname}</b></h2></div>
                 </div>
-                <div className={styles.pagedesc}>
-                {documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}
-                </div>
+                <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
             </div>
         </div>
 
@@ -68,13 +66,11 @@ const PageHeading = ({ page, featuredRole }) => {
 
         <div className={styles.heading}>
             <div className="container">
-                <div className={styles.pagemeta}>
+                <div className={styles.pageMeta}>
                     <Breadcrumb parentLink={parentLink} link={link} styles={styles} />
-                    <div className={styles.pagetagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
+                    <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
                 </div>
-                <div className={styles.pagedesc}>
-                    {page.fields.pageHeading.fields.pageDescription}
-                </div>
+                <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
             </div>
         </div>
 

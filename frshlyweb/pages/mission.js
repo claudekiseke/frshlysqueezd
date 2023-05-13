@@ -88,7 +88,9 @@ const Mission = ({ logo, navigation, page, communityStats, supportTabs, team }) 
       </Head>
       <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />
-      {section}
+      <div className="container">
+        {section}
+      </div>
       <Footer />
     </>
   )
