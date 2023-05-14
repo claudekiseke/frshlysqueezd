@@ -22,7 +22,7 @@ const PageHeading = ({ page, featuredRole }) => {
 
                 try {
                     const docSnap = await getDoc(docRef);
-                    setFname((fname) => fname = docSnap.data().fname + "!");
+                    setFname((fname) => fname = docSnap.data().fname);
 
                 } catch (e) {
                     console.log("friend!:", e);
@@ -57,7 +57,7 @@ const PageHeading = ({ page, featuredRole }) => {
                         <span className={styles.pageTitle}>
                             {page.fields.pageHeading.fields.pageTitle}
                         </span>
-                        <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2><b>{fname}</b></h2></div>
+                        <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2><b>{fname}</b>!</h2></div>
                     </div>
                     <div className={styles.pageDescription}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
                 </div>

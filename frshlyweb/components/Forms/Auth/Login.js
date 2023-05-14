@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import Link from 'next/link';
-import { useRouter } from "next/router";
-import { logIn, signInWithGoogle } from "../../../firebase/clientApp";
+import { logIn } from "../../../firebase/clientApp";
 import styles from './auth.module.css';
 
 function Login() {
-  const router = useRouter()
+  const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    
+
     const loginForm = document.querySelector('#login__form');
     const formAction = e.target.name;
 
-   if (formAction === 'logInWithEmail') {
-    logIn(email, password).then(cred => {
-      router.push('/account/my-account')
-    })
-    loginForm.reset();
+    if (formAction === 'logInWithEmail') {
+      logIn(email, password, setError);
+      loginForm.reset();
+    }
   }
-   } 
 
   return (
-        <div className="login">
-      <form 
+    <div className="login">
+      {error && <p>{error}</p>}
+      <form
         id="login__form"
       >
         <input
@@ -34,6 +32,7 @@ function Login() {
           className={styles.login__textBox}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="username"
           placeholder="E-mail Address"
         />
         <input
@@ -42,15 +41,16 @@ function Login() {
           className={styles.login__textBox}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="current-password"
           placeholder="Password"
         />
         <input
           type="submit"
           className="btn btn__primary"
           name="logInWithEmail"
-          value="Log In" 
+          value="Log In"
           onClick={loginSubmit}
-         />
+        />
         <div>
           <Link href="/reset">Forgot Password</Link>
         </div>

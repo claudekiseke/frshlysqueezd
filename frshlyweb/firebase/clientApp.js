@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
   getAuth,
+  AuthErrorCodes,
   onAuthStateChanged,
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -61,12 +62,19 @@ const signInWithGoogle = async () => {
   }
 };
 
-export const logIn = async (email, password) => {
+export const logIn = async (email, password, setErr) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    if (err.code === AuthErrorCodes.INVALID_EMAIL) {
+      setErr('Invalid email address');
+    } else if (err.code === AuthErrorCodes.USER_NOT_FOUND) {
+      setErr('User not found');
+    } else if (err.code === AuthErrorCodes.WRONG_PASSWORD) {
+      setErr('Incorrect password');
+    } else {
+      setErr('An error occurred. If this issue persists, please reach out to support@frshlysqueezd.com.');
+    }
   }
 };
 
