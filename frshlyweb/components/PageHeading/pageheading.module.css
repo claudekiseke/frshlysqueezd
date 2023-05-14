@@ -17,6 +17,9 @@
 }
 
 .pageMeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column: 1 / span 6;
 }
 
@@ -42,7 +45,7 @@
     font-size: 4rem;
     font-weight: 500;
     line-height: 4rem;
-    margin: 10px 0 0;
+    margin: 0;
 }
 .homeHeading .pageTitle h2,
 .homeHeading .pageTagline h2 {
@@ -52,7 +55,7 @@
 .pageTagline h2 b {
     color: var(--light-yellow);
     font-family: 'Kristi';
-    font-size: 7rem;
+    font-size: 5.5rem;
     font-weight: 400;
     position: relative;
 }
@@ -72,12 +75,16 @@
     margin: 0;
 }
 
-.pageDescription{
+.pageDescription {
     align-items: center;
     color: var(--neutral);
     display: flex;
     font-size: 1.6rem;
     grid-column: span 6;
+}
+
+.pageDescription p {
+    margin-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -100,6 +107,9 @@
         font-size: 4.8rem;
         line-height: 5.2rem;
         margin: 20px 0 60px;
+    }
+    .pageTitle h2 b {
+        font-size: 7rem;
     }
 
     .pageTitle h2 b::after {
