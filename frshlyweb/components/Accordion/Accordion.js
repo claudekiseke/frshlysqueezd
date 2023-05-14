@@ -17,10 +17,8 @@ export default function Accordion({ accordion }) {
     });
 
     return (
-        <div className="container">
             <div className={styles.accordion}>
                 {accordionItem}
             </div>
-        </div>
     );
 }

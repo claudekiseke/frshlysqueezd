@@ -54,13 +54,9 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links,
   
   onAuthStateChanged(auth, async (user) => {
     if (user) {
-        console.log('logged in');
         setAccess(true);
-        console.log(access);
     } else {
-        console.log('not logged in');
         setAccess(false);
-        console.log(access);
     }
 });
 

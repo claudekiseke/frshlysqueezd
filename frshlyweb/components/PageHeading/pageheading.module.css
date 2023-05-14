@@ -20,10 +20,16 @@
     grid-column: 1 / span 6;
 }
 
-.pageMeta span {
+.pageMeta span,
+.pageMeta span a {
     color: var(--neutral);
     font-size: 1.2rem;
     text-transform: uppercase;
+}
+
+.pageMeta span a {
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .pageTagline > * {

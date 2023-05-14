@@ -1,11 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
 import styles from './resources.module.css';
 
 const Resource = ({ resourceFields, overlay, filter, access }) => {
     const ref = useRef(null);
-
 
     useEffect(() => {
         if (ref.current) {
@@ -52,10 +51,10 @@ const Resource = ({ resourceFields, overlay, filter, access }) => {
             );
         }
     }
-
+    
     if (access) {
         return (
-            <div className={`${styles.resource} ${topic} ${audience} ${!access ? styles.blockText : ''}`} ref={ref}>
+            <div className={`${styles.resource} ${topic} ${audience}`} ref={ref}>
                 <div className={styles.resource__img}>
                     {image()}
                 </div>
@@ -68,7 +67,7 @@ const Resource = ({ resourceFields, overlay, filter, access }) => {
         );
     } else {
         return (
-            <div className={`${styles.resource} ${topic} ${audience} ${!access ? styles.blockText : ''}`} ref={ref}>
+            <div className={`${styles.resource} ${topic} ${audience} ${styles.blockText}`} ref={ref}>
                 <div className={styles.resource__img}>
                     {image()}
                 </div>
