@@ -70,7 +70,7 @@ export const logIn = async (email, password) => {
   }
 };
 
-export const signUp = async (fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github) => {
+export const signUp = async (fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -92,7 +92,8 @@ export const signUp = async (fname, lname, email, password, occupation, industry
       instagram,
       medium,
       behance,
-      github
+      github,
+      portfolio
     });
   } catch (err) {
     console.error(err);
@@ -118,20 +119,29 @@ export const logout = () => {
 };
 
 const getUserDetails = async (setFormData) => {
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-      doc(db, "users", user.uid)
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
       const docRef = doc(db, "users", user.uid);
+      const docSnap = await getDoc(docRef);
 
-      try {
-          const docSnap = await getDoc(docRef);
-            setFormData(docSnap.data());
-        } catch (e) {
-          console.log("dOENS:", e);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setFormData(data)
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
       }
     }
-    }, []);
+  });
 };
+
+const updateAccount = async (formData) => {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      await setDoc(doc(db, "users", user.uid), formData);
+    }
+  });
+}
 
 const contactSubmit = async (name, company, email, message) => {
   try {
@@ -176,6 +186,7 @@ export {
   signInWithGoogle,
   sendPasswordReset,
   getUserDetails,
+  updateAccount,
   contactSubmit,
   resourceSubmit
 };

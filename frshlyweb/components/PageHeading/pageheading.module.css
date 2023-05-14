@@ -6,6 +6,8 @@
 
 .heading {
     background-color: var(--frshly-orange);
+    border-radius: 20px;
+    grid-column: span 6;
     margin-bottom: 30px;
     padding: 30px 0;
 }
@@ -65,12 +67,19 @@
 }
 
 .pageDescription{
+    align-items: center;
     color: var(--neutral);
+    display: flex;
     font-size: 1.6rem;
     grid-column: span 6;
 }
 
 @media only screen and (min-width: 768px) {
+    .heading {
+        grid-column: span 12;
+        padding: 40px 60px;
+    }
+
     .homeHeading {
         margin: -83px 0 30px;
         padding: 183px 0 200px;

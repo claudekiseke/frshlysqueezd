@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { getUserDetails, onAuthStateChanged, auth, doc, db, getDoc } from "../../../firebase/clientApp";
+import { getUserDetails, auth, updateAccount } from "../../../firebase/clientApp";
 import styles from "./accountdetails.module.css";
 
-const AccountDetails = ({ accountDetails, filter }) => {
-    const ref = useRef(null);
-
+export default function AccountDetails({ accountDetails, filter }) {
+    const { user } = auth;
+    const ref = useRef();
     const [formData, setFormData] = useState({
         fname: "",
         lname: "",
@@ -25,36 +25,30 @@ const AccountDetails = ({ accountDetails, filter }) => {
         portfolio: ""
     });
 
-    const [formValue, setFormValue] = useState({
-        fname: "",
-        lname: "",
-        email: "",
-        password: "",
-        occupation: "",
-        industry: "",
-        industryother: "",
-        level: "",
-        city: "",
-        country: "",
-        profilepic: "",
-        twitter: "",
-        instagram: "",
-        medium: "",
-        behance: "",
-        github: "",
-        portfolio: ""
-    }); 
+    const populateForm = () => {
+        const isEmpty = Object.values(formData).every(x => x === null || x === '');
 
-    getUserDetails(setFormData);
-    
-    const inputValue = (e) => {
-        setFormValue({ ...formValue, [e.target.name]: e.target.value });
+        if (isEmpty) {
+            getUserDetails(setFormData);
+        }
+    }
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
+        if (user) {
+            const docRef = db.collection("users").doc(user.uid);
+            docRef.update({ [name]: value });
+        }
     };
 
-    const formSubmit = async (e) => {
-        e.preventDefault();
-    };    
-    
+    const formSubmit = () => {
+        updateAccount(formData);
+    }
+
     useEffect(() => {
         if (ref.current) {
             if ((filter == 'all') || (ref.current.classList.contains(filter))) {
@@ -66,6 +60,8 @@ const AccountDetails = ({ accountDetails, filter }) => {
             }
         }
     });
+
+    populateForm();
 
     return (
         <div
@@ -83,48 +79,48 @@ const AccountDetails = ({ accountDetails, filter }) => {
                             className={styles.input}
                             id="account__fname"
                             type="text"
-                            value={formValue.fname}
-                            onChange={inputValue}
+                            value={formData.fname}
+                            onChange={handleInputChange}
                             name="fname"
                             placeholder="First name" />
                         <input
                             className={styles.input}
                             id="account__lname"
                             type="text"
-                            value={formValue.lname}
-                            onChange={inputValue}
+                            value={formData.lname}
+                            onChange={handleInputChange}
                             name="lname"
                             placeholder="Last name" />
                         <input
                             className={styles.input}
                             id="account__email"
                             type="email"
-                            value={formValue.email}
-                            onChange={inputValue}
+                            value={formData.email}
+                            onChange={handleInputChange}
                             name="email"
                             placeholder="Email address" />
                         <input
                             className={styles.input}
                             id="account__password"
                             type="password"
-                            value={formValue.password}
-                            onChange={inputValue}
+                            value={formData.password}
+                            onChange={handleInputChange}
                             name="password"
                             placeholder="Password" />
                         <input
                             className={styles.input}
                             id="account__city"
                             type="text"
-                            value={formValue.city}
-                            onChange={inputValue}
+                            value={formData.city}
+                            onChange={handleInputChange}
                             name="city"
                             placeholder="City" />
                         <input
                             className={styles.input}
                             id="account__country"
                             type="text"
-                            value={formValue.country}
-                            onChange={inputValue}
+                            value={formData.country}
+                            onChange={handleInputChange}
                             name="country"
                             placeholder="Country" />
                     </div>
@@ -136,15 +132,15 @@ const AccountDetails = ({ accountDetails, filter }) => {
                             className={styles.input}
                             id="account__occupation"
                             type="text"
-                            value={formValue.occupation}
-                            onChange={inputValue}
+                            value={formData.occupation}
+                            onChange={handleInputChange}
                             name="occupation"
                             placeholder="Occupation" />
                         <select
                             className={styles.select}
+                            onChange={handleInputChange}
                             name="industry"
-                            value={formValue.industry}
-                            onChange={inputValue}
+                            value={formData.industry}
                             id="account__industry">
                             <option value="">Select industry</option>
                             <option value="volvo">Volvo</option>
@@ -154,9 +150,9 @@ const AccountDetails = ({ accountDetails, filter }) => {
                         </select>
                         <select
                             className={styles.select}
+                            onChange={handleInputChange}
                             name="level"
-                            value={formValue.level}
-                            onChange={inputValue}
+                            value={formData.level}
                             id="account__level">
                             <option value="">Select level</option>
                             <option value="student">Student/Enthusiast</option>
@@ -167,9 +163,9 @@ const AccountDetails = ({ accountDetails, filter }) => {
                         <input
                             className={styles.input}
                             id="account__industryother"
-                            value={formValue.industryother}
-                            onChange={inputValue}
+                            value={formData.industryother}
                             type="text"
+                            onChange={handleInputChange}
                             name="industryother"
                             placeholder="Enter industry" />
                     </div>
@@ -180,49 +176,49 @@ const AccountDetails = ({ accountDetails, filter }) => {
                         <input
                             className={styles.input}
                             id="account__twitter"
-                            value={formValue.twitter}
-                            onChange={inputValue}
+                            value={formData.twitter}
                             type="text"
+                            onChange={handleInputChange}
                             name="twitter"
                             placeholder="Twitter" />
                         <input
                             className={styles.input}
                             id="account__instagram"
-                            value={formValue.instagram}
-                            onChange={inputValue}
+                            value={formData.instagram}
                             type="text"
+                            onChange={handleInputChange}
                             name="instagram"
                             placeholder="Instagram" />
                         <input
                             className={styles.input}
                             id="account__medium"
-                            value={formValue.medium}
-                            onChange={inputValue}
+                            value={formData.medium}
                             type="text"
+                            onChange={handleInputChange}
                             name="medium"
                             placeholder="Medium" />
                         <input
                             className={styles.input}
                             id="account__behance"
-                            value={formValue.behance}
-                            onChange={inputValue}
+                            value={formData.behance}
                             type="text"
+                            onChange={handleInputChange}
                             name="behance"
                             placeholder="Behance" />
                         <input
                             className={styles.input}
                             id="account__github"
-                            value={formValue.github}
-                            onChange={inputValue}
+                            value={formData.github}
                             type="text"
+                            onChange={handleInputChange}
                             name="github"
                             placeholder="Github" />
                         <input
                             className={styles.input}
                             id="account__portfolio"
-                            value={formValue.portfolio}
-                            onChange={inputValue}
+                            value={formData.portfolio}
                             type="text"
+                            onChange={handleInputChange}
                             name="portfolio"
                             placeholder="Portfolio site" />
                     </div>
@@ -236,7 +232,5 @@ const AccountDetails = ({ accountDetails, filter }) => {
                 </div>
             </form>
         </div>
-    )
+    );
 }
-
-export default AccountDetails;

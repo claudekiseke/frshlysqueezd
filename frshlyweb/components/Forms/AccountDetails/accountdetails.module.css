@@ -24,7 +24,7 @@
 }
 
 .input, .select {
-    padding: 20px 12px;
+    padding: 20px;
 }
 
 .select {
@@ -33,6 +33,6 @@
 
 @media screen and (min-width: 768px) {
     .input_group {
-        padding: 20px;
+        padding: 20px 0;
     }
 }

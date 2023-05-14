@@ -50,30 +50,33 @@ const PageHeading = ({ page, featuredRole }) => {
         </>
     ) : (url === '/account/my-account') ? (
 
-        <div className={styles.heading}>
-            <div className="container">
-                <div className={styles.pageMeta}>
-                    <span className={styles.pageTitle}>
-                        {page.fields.pageHeading.fields.pageTitle}
-                    </span>
-                    <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2><b>{fname}</b></h2></div>
+        <div className="container">
+            <div className={styles.heading}>
+                <div className="container">
+                    <div className={styles.pageMeta}>
+                        <span className={styles.pageTitle}>
+                            {page.fields.pageHeading.fields.pageTitle}
+                        </span>
+                        <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)} <h2><b>{fname}</b></h2></div>
+                    </div>
+                    <div className={styles.pageDescription}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
                 </div>
-                <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
             </div>
         </div>
 
     ) : (
 
-        <div className={styles.heading}>
-            <div className="container">
-                <div className={styles.pageMeta}>
-                    <Breadcrumb parentLink={parentLink} link={link} styles={styles} />
-                    <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
+        <div className="container">
+            <div className={styles.heading}>
+                <div className="container">
+                    <div className={styles.pageMeta}>
+                        <Breadcrumb parentLink={parentLink} link={link} styles={styles} />
+                        <div className={styles.pageTagline}>{documentToReactComponents(page.fields.pageHeading.fields.pageHeading)}</div>
+                    </div>
+                    <div className={styles.pageDescription}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
                 </div>
-                <div className={`${styles.pageDescription} mobile-only`}>{documentToReactComponents(page.fields.pageHeading.fields.pageDescription)}</div>
             </div>
         </div>
-
     )
 }
 
