@@ -3,16 +3,7 @@ import { useState } from 'react';
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import styles from './access.module.css';
 
-export default function Access({ navigation }) {
-    const [access, setAccess] = useState(false);
-
-    onAuthStateChanged(auth, async (user) => {
-        if (!user) {
-            setAccess(false);
-        } else {
-            setAccess(true);
-        }
-    });
+export default function Access({ access }) {
 
     if (!access) {
         return (
