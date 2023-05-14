@@ -71,7 +71,9 @@ const Faq = ({ logo, navigation, page, communityStats, accordion }) => {
             </Head>
             <Header logo={logo} navigation={navigation} />
             <PageHeading key={pageHeading.sys.id} page={page} />
-            {section}
+            <div className="container">
+                {section}
+            </div>
             <Footer />
         </>
     )

@@ -71,24 +71,38 @@ body {
 input,
 select,
 textarea {
-  background-color: var(--neutral);
+  background-color: var(--grey);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--dark-neutral);
   border-radius: 30px;
   font-family: inherit;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 18px 30px;
 }
-
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--orange-alt-2);
+}
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
-  color: var(--dark-grey);
+  color: var(--light-brown);
 }
 
 textarea {
   resize: none;
 }
-
+.formSubmitedText {
+    background-color: var(--orange-alt);
+    border: 1px solid var(--orange-alt-1);
+    border-radius: 12px;
+    padding: 10px 15px;
+    color: var(--neutral);
+    font-size: 1.4rem;
+    line-height: 1.2rem;
+}
 .btn {
   border-radius: 30px;
   cursor: pointer;
@@ -102,6 +116,7 @@ textarea {
 }
 
 .btn:disabled {
+  box-shadow: none;
   cursor: initial;
 }
 
