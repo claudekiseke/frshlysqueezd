@@ -1,89 +1,120 @@
 .weekly {
     background-color: var(--frshly-orange);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     grid-column: 1 / span 6;
     margin: 0 -20px 60px;
-    padding: 20px 30px;
+    padding: 60px 30px;
 }
-.title {
-    grid-column: span 6;
-    align-self: center;
-}
+
 .title h2 {
     color: var(--neutral);
     font-family: 'Poppins';
-    font-size: 2.4rem;
-    font-weight: 300;
-    line-height: 3rem;
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 4rem;
+    margin: 0;
     text-align: center;
 }
+
 .title b {
+    color: var(--light-yellow);
     font-family: 'Kristi';
-    font-size: 4.8rem;
+    font-size: 5.8rem;
     font-weight: normal;
 }
+
 .weekly__text {
     align-items: center;
     display: flex;
-    grid-column: span 5;
 }
+
 .desc {
     align-self: center;
     color: var(--neutral);
-    grid-column: span 6;
     text-align: center;
 }
+
 .mail {
     display: flex;
-    grid-column: span 6;
+    align-items: center;
 }
+
 .mail div {
-    align-self: center;
     display: flex;
-}
-.input {
+    flex-direction: column;
     width: 100%;
+}
+
+.input {
     border: 0;
     font-family: inherit;
     font-size: 1.6rem;
     margin: 0;
     padding: 20px 30px;
 }
+
 .input::placeholder {
     color: var(--light-brown);
 }
+
 .input:first-child {
-    border-radius: 30px 0 0 30px;
+    border-radius: 30px 30px 0 0;
 }
+
 .input:nth-child(n+2) {
     border-radius: 0;
-    border-left: 1px solid var(--frshly-orange);
 }
+
 .input:last-child {
     background-color: var(--orange-alt);
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 0 30px 30px;
 }
-.input:last-child:hover {
-    background-color: var(--orange-alt-1);
-}
+
 @media only screen and (min-width: 768px) {
     .weekly {
         border-radius: 20px;
+        gap: 100px;
         grid-column: 1 / span 12;
+        flex-direction: row;
         margin: 0 0 60px;
         padding: 60px;
     }
-    .title {
-        grid-column: span 2;
-    }
-    .desc {
-        align-self: center;
-        border-left: 1px solid var(--neutral);
-        grid-column: span 3;
-        padding-left: 20px;
+
+    .title h2 {
+        font-size: 4.2rem;
+        line-height: 4rem;
         text-align: left;
     }
-    .mail {
-        grid-column: span 7;
-        justify-self: end;
+
+    .title h2 b {
+        font-size: 7.2rem;
+    }
+
+    .desc {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .mail div {
+        flex-direction: row;
+    }
+
+    .input:first-child {
+        border-radius: 30px 0 0 30px;
+    }
+
+    .input:nth-child(n+2) {
+        border-radius: 0;
+        border-left: 1px solid var(--frshly-orange);
+    }
+
+    .input:last-child {
+        border-radius: 0 30px 30px 0;
+    }
+
+    .input:last-child:hover {
+        background-color: var(--orange-alt-1);
     }
 }
