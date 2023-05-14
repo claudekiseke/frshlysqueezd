@@ -79,7 +79,6 @@
     align-items: center;
     color: var(--neutral);
     display: flex;
-    font-size: 1.6rem;
     grid-column: span 6;
 }
 
@@ -115,5 +114,9 @@
     .pageTitle h2 b::after {
         bottom: 0;
         right: 0;
+    }
+
+    .pageDescription p {
+        margin-top: 0;
     }
 }
