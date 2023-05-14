@@ -135,9 +135,6 @@ const getUserDetails = async (setFormData) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
         setFormData(data)
-      } else {
-        // docSnap.data() will be undefined in this case
-        console.log("No such document!");
       }
     }
   });

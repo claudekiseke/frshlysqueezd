@@ -21,7 +21,6 @@ const Navigation = ({ navLinks }) => {
             signOut(auth).then(() => {
             }).catch((err) => {
                 // An error happened.
-                console.log(err)
             });;
         }
     };

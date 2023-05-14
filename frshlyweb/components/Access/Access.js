@@ -1,6 +1,3 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useState } from 'react';
-import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import styles from './access.module.css';
 
 export default function Access({ access }) {
