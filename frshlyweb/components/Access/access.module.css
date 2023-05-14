@@ -13,5 +13,11 @@
     /* Note: backdrop-filter has minimal browser support */
 }
 .noAccessContent {
-   
+   grid-column: span 6;
+}
+
+@media only screen and (min-width: 768px) {
+    .noAccessContent {
+        grid-column: span 12;
+     }
 }

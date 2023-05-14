@@ -58,9 +58,6 @@
     max-height: 100vh;
 }
 .blockText {
-    user-select: none;
-}
-.blockText:last-child {
     display: none;
 }
 
@@ -78,7 +75,8 @@
     .resource__title {
         font-size: 1.7rem;
     }
-    .blockText:last-child {
+    .blockText {
         display: block;
+        user-select: none;
     }
 }

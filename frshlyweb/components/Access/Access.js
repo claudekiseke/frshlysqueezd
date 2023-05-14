@@ -17,10 +17,12 @@ export default function Access({ navigation }) {
     if (!access) {
         return (
             <div className={styles.noAccess}>
-                <div className={styles.noAccessContent}>
-                    <h3>Register or log in to access exclusive content (it’s free!)</h3>
-                    <p>We’re open collective of designers of UXUI designers, developers and engineers; interior designers and architects.</p>
-                    <div className=""></div>
+                <div className="container">
+                    <div className={styles.noAccessContent}>
+                        <h3>Register or log in to access exclusive content (it’s free!)</h3>
+                        <p>We’re open collective of designers of UXUI designers, developers and engineers; interior designers and architects.</p>
+                        <div className=""></div>
+                    </div>
                 </div>
             </div>
         );
