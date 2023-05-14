@@ -25,11 +25,7 @@ const PageHeading = ({ page, featuredRole }) => {
                     setFname((fname) => fname = docSnap.data().fname);
 
                 } catch (e) {
-                    console.log("friend!:", e);
                 }
-            } else {
-                // User is signed out
-                // ...
             }
         })
     });

@@ -7,11 +7,9 @@ const FeaturedRole = (featuredRole) => {
         const title = item.fields.featuredRole;
         if (index <= 9) {
             return (
-                <>
                     <div className={styles.featuredRole__title} key={index}>
                         <span className={styles.featuredRole__text}>{title}</span>
                     </div>
-                </>
             );
         }
     });
@@ -19,11 +17,9 @@ const FeaturedRole = (featuredRole) => {
         const title = item.fields.featuredRole;
         if (index > 9) {
             return (
-                <>
                     <div className={styles.featuredRole__title} key={index}>
                         <span className={styles.featuredRole__text}>{title}</span>
                     </div>
-                </>
             );
         }
     });

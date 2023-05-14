@@ -5,6 +5,11 @@ import styles from './resources.module.css';
 
 const Resource = ({ resourceFields, overlay, filter, access }) => {
     const ref = useRef(null);
+    const title = resourceFields.resourceTitle;
+    const url = resourceFields.url;
+    const desc = resourceFields.description;
+    const topic = resourceFields.topic.join(" ").toLowerCase();
+    const audience = resourceFields.audience.join(" ").toLowerCase();
 
     useEffect(() => {
         if (ref.current) {
@@ -14,13 +19,10 @@ const Resource = ({ resourceFields, overlay, filter, access }) => {
                 ref.current.classList.remove(styles.resource__show);
             }
         }
+
+        
     });
 
-    const title = resourceFields.resourceTitle;
-    const url = resourceFields.url;
-    const desc = resourceFields.description;
-    const topic = resourceFields.topic.join(" ").toLowerCase();
-    const audience = resourceFields.audience.join(" ").toLowerCase();
 
     const image = () => {
         if (resourceFields.image) {

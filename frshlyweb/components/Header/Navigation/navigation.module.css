@@ -21,13 +21,16 @@
     transition: 1.5s color ease;
 }
 .nav__list:hover a {
-    color: var(--light-brown);
+    color: var(--orange-alt-1);
 }
 .nav__item a:hover {
     color: var(--frshly-orange);
 }
-.nav__homeItem a {
-    color: var(--frshly-orange);
+.nav__homeItem:hover a {
+    color: var(--orange-alt-2);
+}
+.nav__homeItem a:hover {
+    color: var(--neutral);
 }
 .loginLinks {
     border: 1px solid var(--frshly-orange);

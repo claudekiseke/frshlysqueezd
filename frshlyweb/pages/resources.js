@@ -87,8 +87,7 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links,
       <PageHeading key={pageHeading.sys.id} page={page} />
       <div className={`container` + ` ${styles.resourceDirectory}`}>
         {section}
-      <Access navigation={navigation} />
-      
+        <Access access={access} />
       <Modal />
       </div>
       <Footer />

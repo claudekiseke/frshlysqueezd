@@ -8,6 +8,7 @@ import MailingListSection from '../../components/MailingListSection/MailingListS
 import CommunityStats from '../../components/CommunityStats/CommunityStats';
 import Footer from '../../components/Footer/Footer';
 import { createClient } from 'contentful';
+import SectionHeading from '../../components/SectionHeading/SectionHeading';
 
 export async function getStaticProps() {
 
@@ -52,6 +53,10 @@ const Faq = ({ logo, navigation, page, communityStats, accordion }) => {
 
             case 'mailingListSection':
                 component = <MailingListSection key={mainContent[index].sys.id} mailingListSection={mainContent[index].fields} />;
+                break;
+
+            case 'sectionHeading':
+                component = <SectionHeading key={mainContent[index].sys.id} sectionHeading={mainContent[index].fields} />;
                 break;
 
             case 'communityStats':

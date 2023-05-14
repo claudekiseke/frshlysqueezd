@@ -58,7 +58,7 @@
     max-height: 100vh;
 }
 .blockText {
-    user-select: none;
+    display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -74,5 +74,9 @@
     }
     .resource__title {
         font-size: 1.7rem;
+    }
+    .blockText {
+        display: block;
+        user-select: none;
     }
 }

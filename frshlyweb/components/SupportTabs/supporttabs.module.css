@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 20px;
     grid-column: span 6;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 .supporttab {
     background-color: var(--dark-neutral);
@@ -11,8 +11,7 @@
     border-radius: 8px;
     border: 0;
     flex: 1 1 0px;
-    margin-bottom: 20px;
-    padding: 45px 40px;
+    padding: 20px 40px;
     text-align: center;
     text-decoration: none;
     transition: .5s all ease;
@@ -31,10 +30,11 @@
         flex-direction: row;
         gap: 20px;
         grid-column: span 12;
-        margin-bottom: 60px;
+        margin-bottom: 80px;
     }
     .supporttab {
         grid-column: span 4;
         margin-bottom: 0;
+        padding: 45px 40px;
     }
 }

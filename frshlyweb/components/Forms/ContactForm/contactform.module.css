@@ -1,6 +1,7 @@
 .contact {
     grid-column: 1 / span 6;
     margin-bottom: 60px;
+    padding: 0;
 }
 .contactform {
     grid-column: span 6;
