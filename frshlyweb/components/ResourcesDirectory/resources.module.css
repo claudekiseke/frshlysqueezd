@@ -60,6 +60,9 @@
 .blockText {
     user-select: none;
 }
+.blockText:last-child {
+    display: none;
+}
 
 @media only screen and (min-width: 768px) {
     .resources {
@@ -74,5 +77,8 @@
     }
     .resource__title {
         font-size: 1.7rem;
+    }
+    .blockText:last-child {
+        display: block;
     }
 }
