@@ -3,6 +3,7 @@ import { contactSubmit } from "../../../firebase/clientApp";
 import styles from './contactform.module.css';
 
 const ContactForm = ({ contactForm }) => {
+    const [submitted, setSubmitted] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         company: "",
@@ -23,6 +24,8 @@ const ContactForm = ({ contactForm }) => {
         const message = formData.message;
 
         contactSubmit(name, company, email, message);
+
+        setSubmitted(true);
 
         setFormData({
             name: "",
@@ -92,6 +95,7 @@ const ContactForm = ({ contactForm }) => {
                         value={contactForm.submitValue}
                     />
                 </form>
+                {submitted && <p className="formSubmitedText">Form submitted successfully!</p>}
             </div>
             <div className={styles.contacttext}>
                 <h3 className={styles.contacttext__title}>{contactForm.generalEnquiriesTitle}</h3>

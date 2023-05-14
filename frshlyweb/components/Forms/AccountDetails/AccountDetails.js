@@ -5,6 +5,7 @@ import styles from "./accountdetails.module.css";
 export default function AccountDetails({ accountDetails, filter }) {
     const { user } = auth;
     const ref = useRef();
+    const [submitted, setSubmitted] = useState(false);
     const [formData, setFormData] = useState({
         fname: "",
         lname: "",
@@ -45,8 +46,11 @@ export default function AccountDetails({ accountDetails, filter }) {
         }
     };
 
-    const formSubmit = () => {
+    const formSubmit = async (e) => {
+        e.preventDefault();
+
         updateAccount(formData);
+        setSubmitted(true);
     }
 
     useEffect(() => {
@@ -67,6 +71,8 @@ export default function AccountDetails({ accountDetails, filter }) {
         <div
             className={`${styles.accountdetails} ${accountDetails.className}`}
             ref={ref}>
+            {submitted && <p className="formSubmitedText">Form submitted successfully!</p>}
+
             <form
                 className={`${styles.form} ${accountDetails.className}`}
                 id="contact__form"
