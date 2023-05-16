@@ -15,7 +15,11 @@
 .noAccessContent {
    grid-column: span 6;
 }
-
+.noAccessContent__cta {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
 @media only screen and (min-width: 768px) {
     .noAccessContent {
         grid-column: span 12;
