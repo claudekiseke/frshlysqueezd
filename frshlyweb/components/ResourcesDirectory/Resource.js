@@ -14,13 +14,13 @@ const Resource = ({ resourceFields, overlay, filter, access }) => {
     useEffect(() => {
         if (ref.current) {
             if ((filter == 'all') || (ref.current.classList.contains(filter))) {
-                ref.current.className += " " + styles.resource__show;
+                if (!(ref.current.classList.contains('show'))) {
+                    ref.current.className += " " + 'show';
+                }
             } else {
-                ref.current.classList.remove(styles.resource__show);
+                ref.current.classList.remove('show');
             }
         }
-
-        
     });
 
 
