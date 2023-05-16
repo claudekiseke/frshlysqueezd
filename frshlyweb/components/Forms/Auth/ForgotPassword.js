@@ -21,7 +21,7 @@ export default function ForgotPassword() {
 
   return (
     <div className={styles.auth}>
-      {error ? <p>{error}</p> : <p>Enter your email below to reset your password. You'll receive an email with further steps if your account</p>}
+      {error ? <p>{error}</p> : <p>Enter your email below to reset your password. You&apos;ll receive an email with further steps if your account</p>}
       <form
         id="forgot__form"
         className={styles.loginForm}
