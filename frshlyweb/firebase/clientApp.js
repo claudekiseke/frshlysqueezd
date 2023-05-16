@@ -107,7 +107,7 @@ export const signUp = async (fname, lname, email, password, occupation, industry
     if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
     setError('You already have an account with this email! Log in or reset your password to continue.');
   } else if (err.code === AuthErrorCodes.INVALID_EMAIL) {
-    setError('Hmm, try again. Did you enter a valid email?');
+    setError('You already have an account with this email! Log in or reset your password to continue.');
   }
   }
 };
