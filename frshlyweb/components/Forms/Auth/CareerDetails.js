@@ -5,7 +5,8 @@ const CareerDetails = ({ formData, setFormData, styles }) => {
           className={styles.login__textBox}
           id="signup__occupation"
           type="text"
-          placeholder="Occupation"
+          placeholder="Occupation *"
+          required
           value={formData.occupation}
           onChange={(e) =>
             setFormData({ ...formData, occupation: e.target.value})} />
@@ -14,13 +15,15 @@ const CareerDetails = ({ formData, setFormData, styles }) => {
           name="industry"
           id="signup__industry"
           value={formData.industry}
+          required
           onChange={(e) =>
             setFormData({ ...formData, industry: e.target.value })}>
-          <option value="">Select industry</option>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+          <option value="">Select specificity *</option>
+          <option value="tech">Programming</option>
+          <option value="design">Design</option>
+          <option value="engineering">Engenieering</option>
+          <option value="data">Data</option>
+          <option value="other">Other</option>
         </select>
         <input
           className={styles.login__textBox}
@@ -37,7 +40,6 @@ const CareerDetails = ({ formData, setFormData, styles }) => {
           value={formData.level}
           onChange={(e) =>
             setFormData({ ...formData, level: e.target.value })}>
-          <option value="">Select level</option>
           <option value="">Select level</option>
           <option value="student">Student/Enthusiast</option>
           <option value="entry">Entry Level</option>

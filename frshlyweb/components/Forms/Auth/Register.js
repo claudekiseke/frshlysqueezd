@@ -77,6 +77,7 @@ const Register = () => {
 
   return (
     <div className="signup">
+      <p>* fields are required.</p>
       <form id="signup__form" onSubmit={signupSubmit}>
         {signUpTabs()}
       <div className={styles.progress}>
