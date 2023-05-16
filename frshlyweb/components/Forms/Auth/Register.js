@@ -1,6 +1,5 @@
 import styles from "./auth.module.css";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { signUp } from "../../../firebase/clientApp";
 import PersonalDetails from './PersonalDetails';
 import CareerDetails from './CareerDetails';
@@ -8,7 +7,7 @@ import NetworkDetails from './NetworkDetails';
 
 const Register = () => {
 
-  const router = useRouter()
+  const [error, setError] = useState("");
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     fname: "",
@@ -69,14 +68,13 @@ const Register = () => {
     const github = formData.github;
     const portfolio = formData.portfolio;
 
-    signUp(fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio).then(cred => {
-      router.push('/account/my-account')
+    signUp(fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio, setError);
       signupForm.reset();
-    })
   }
 
   return (
     <div className="signup">
+      {error && <p>{error}</p>}
       <p>* fields are required.</p>
       <form id="signup__form" onSubmit={signupSubmit}>
         {signUpTabs()}
