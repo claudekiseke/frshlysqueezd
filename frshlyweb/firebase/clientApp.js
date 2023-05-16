@@ -78,7 +78,7 @@ export const logIn = async (email, password, setErr) => {
   }
 };
 
-export const signUp = async (fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio) => {
+export const signUp = async (fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio, setError) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -104,8 +104,11 @@ export const signUp = async (fname, lname, email, password, occupation, industry
       portfolio
     });
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
+    setError('You already have an account with this email! Log in or reset your password to continue.');
+  } else if (err.code === AuthErrorCodes.INVALID_EMAIL) {
+    setError('Hmm, try again. Did you enter a valid email?');
+  }
   }
 };
 
