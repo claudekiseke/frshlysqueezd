@@ -3,6 +3,22 @@ import styles from './sectionheading.module.css';
 
 const SectionHeading = ({ sectionHeading, filter }) => {
     const ref = useRef(null);
+    
+    useEffect(() => {
+        if (ref.current) {
+            if (filter != null) {
+            if ((filter == 'all') || (ref.current.classList.contains(filter))) {
+                if (!(ref.current.classList.contains('show'))) {
+                    ref.current.classList.remove('show-none');
+                    ref.current.className += " " + 'show';
+                }
+            } else {
+                ref.current.classList.remove('show');
+                ref.current.className += " " + 'show-none';
+            }
+        }
+        }
+    });
 
     const h2 = () => {
         if (sectionHeading.h2Heading) {
@@ -36,7 +52,7 @@ const SectionHeading = ({ sectionHeading, filter }) => {
     }
     return (
         <>
-            <div className={styles.sectionHeading} ref={ref}>
+            <div className={`${styles.sectionHeading} ${sectionHeading.className}`} ref={ref}>
                 <div>
                     {h2()}
                     {h3()}
