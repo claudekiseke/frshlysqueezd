@@ -8,12 +8,12 @@ const SupportTabs = ({ filter, supportTabs }) => {
         if (ref.current) {
             if (filter != null) {
             if ((filter == 'all') || (ref.current.classList.contains(filter))) {
-                if (!(ref.current.classList.contains('show'))) {
+                if (!(ref.current.classList.contains('show-flex'))) {
                     ref.current.classList.remove('show-none');
-                    ref.current.className += " " + 'show';
+                    ref.current.className += " " + 'show-flex';
                 }
             } else {
-                ref.current.classList.remove('show');
+                ref.current.classList.remove('show-flex');
                 ref.current.className += " " + 'show-none';
             }
         }
