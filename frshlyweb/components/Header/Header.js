@@ -17,7 +17,7 @@ const Header = ({ logo, navigation }) => {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${!pageName ? styles.header__homeHeader : styles.header__pageHeader}`}>
         <nav className={`${styles.nav} container`}>
           <div className={`${styles.logo}${!pageName ? ' ' + styles.nav__homeLogo : ''}`}>
             <Link href="/">

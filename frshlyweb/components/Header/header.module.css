@@ -1,6 +1,13 @@
 .header {
     top: 0;
     z-index: 2;
+    position: sticky;
+}
+.header__homeHeader {
+    background-color: var(--frshly-orange);
+}
+.header__pageHeader {
+    background-color: var(--neutral);
 }
 .nav {
     padding: 20px;
