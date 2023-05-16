@@ -42,6 +42,10 @@
     color: var(--frshly-orange);
     border-color: var(--frshly-orange);
 }
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
 .login__textBox,
 .login__select {
     background-color: var(--grey);
@@ -54,6 +58,10 @@
 }
 .login__textBox::placeholder {
     color: var(--brown);
+}
+.login__forgot {
+    color: var(--frshly-orange);
+    font-weight: 600;
 }
 .nav {
     width: 100%;

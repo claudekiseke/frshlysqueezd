@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import Link from 'next/link';
-import { logIn } from "../../../firebase/clientApp";
+import { sendPasswordReset } from "../../../firebase/clientApp";
 import styles from './auth.module.css';
 
-function Login() {
+export default function ForgotPassword() {
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const loginSubmit = (e) => {
     e.preventDefault();
 
-    const loginForm = document.querySelector('#login__form');
+    const forgotForm = document.querySelector('#forgot__form');
     const formAction = e.target.name;
 
     if (formAction === 'logInWithEmail') {
-      logIn(email, password, setError);
-      loginForm.reset();
+        sendPasswordReset(email, setError);
+      forgotForm.reset();
     }
   }
 
   return (
-    <div className="login">
-      {error && <p>{error}</p>}
+    <div className={styles.auth}>
+      {error ? <p>{error}</p> : <p>Enter your email below to reset your password. You'll receive an email with further steps if your account</p>}
       <form
-        id="login__form"
+        id="forgot__form"
+        className={styles.loginForm}
       >
         <input
           id="login__email"
@@ -34,15 +34,6 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
           autoComplete="username"
           placeholder="E-mail Address"
-        />
-        <input
-          id="login__password"
-          type="password"
-          className={styles.login__textBox}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-          placeholder="Password"
         />
         <input
           type="submit"
@@ -58,4 +49,3 @@ function Login() {
     </div>
   );
 }
-export default Login;

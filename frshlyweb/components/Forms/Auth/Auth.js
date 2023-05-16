@@ -23,7 +23,7 @@ export default function Auth() {
                         <Link href="/account/login" className={`${(isForm == 'login') ? styles.active : ''}`}>Log In</Link>
                         <Link href="/account/register" className={`${(isForm == 'register') ? styles.active : ''}`}>Register</Link>
                     </div>
-                    {url.pathname === `/account/login` ? <Login /> : <Register />}
+                    {url.pathname === `/account/register` ? <Register /> : <Login />}
                 </>
             </div>
         </div>
