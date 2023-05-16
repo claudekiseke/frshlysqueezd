@@ -109,13 +109,16 @@ export const signUp = async (fname, lname, email, password, occupation, industry
   }
 };
 
-const sendPasswordReset = async (email) => {
+const sendPasswordReset = async (email, setErr) => {
   try {
     await sendPasswordResetEmail(auth, email);
-    alert("Password reset link sent!");
+    setErr("Password reset link sent!");
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    if (err.code === AuthErrorCodes.INVALID_EMAIL) {
+      setErr('Invalid email address. Are you sure this is the email you log in with? If this issue persists, please reach out to support@frshlysqueezd.com.');
+    } else {
+      setErr('An error occurred. If this issue persists, please reach out to support@frshlysqueezd.com.');
+    }
   }
 };
 

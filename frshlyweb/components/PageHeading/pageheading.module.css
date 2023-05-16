@@ -59,6 +59,9 @@
     font-weight: 400;
     position: relative;
 }
+.homeHeading .pageTitle h2 b {
+    font-size: 7.2rem;
+}
 
 .pageTitle h2 b::after {
     content: '';
