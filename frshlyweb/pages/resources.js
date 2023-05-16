@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../components/Header/Header';
 import Head from 'next/head';
 import PageHeading from '../components/PageHeading/PageHeading';
@@ -51,14 +51,15 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links,
   const pageHeading = pageContent.pageHeading;
   const mainContent = pageContent.mainContent;
 
-  
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
         setAccess(true);
-    } else {
+      } else {
         setAccess(false);
-    }
-});
+      }
+    });
+  });
 
   const section = mainContent.map((item, index) => {
     let component;
@@ -87,7 +88,7 @@ const Resources = ({ logo, navigation, page, resourcesDirectory, overlay, links,
       <div className={`container` + ` ${styles.resourceDirectory}`}>
         {section}
         <Access access={access} />
-      <Modal />
+        <Modal />
       </div>
       <Footer />
     </>
