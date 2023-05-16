@@ -2,9 +2,10 @@ const NetworkDetails = ({ formData, setFormData, styles }) => {
     return (
       <div className="register__network-details">
         <input
-          className={styles.login__textBox}
+          className={`${styles.login__textBox} ${styles.signup__profile}`}
           type="file"
           id="signup__profile-pic"
+
           name="profile-pic"
           value={formData.profilepic}
           onChange={(e) =>
