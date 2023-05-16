@@ -20,7 +20,6 @@ export async function getStaticProps() {
       navigation: navigation
     }
   }
-
 }
 
 export default function forgotPassword ({ logo, navigation }) {
