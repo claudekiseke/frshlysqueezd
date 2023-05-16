@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 import { auth, onAuthStateChanged } from "../../firebase/clientApp";
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
