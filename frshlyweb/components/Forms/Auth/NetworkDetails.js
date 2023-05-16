@@ -49,6 +49,14 @@ const NetworkDetails = ({ formData, setFormData, styles }) => {
           value={formData.github}
           onChange={(e) =>
             setFormData({ ...formData, github: e.target.value })} />
+            <input
+          className={styles.login__textBox}
+          id="signup__portfolio"
+          type="text"
+          placeholder="Portfolio"
+          value={formData.portfolio}
+          onChange={(e) =>
+            setFormData({ ...formData, portfolio: e.target.value })} />
       </div>
     );
   }

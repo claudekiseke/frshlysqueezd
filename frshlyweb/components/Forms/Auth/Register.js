@@ -26,7 +26,8 @@ const Register = () => {
     instagram: "",
     medium: "",
     behance: "",
-    github: ""
+    github: "",
+    portfolio: ""
   });
 
   const signUpTabs = () => {
@@ -66,8 +67,9 @@ const Register = () => {
     const medium = formData.medium;
     const behance = formData.behance;
     const github = formData.github;
+    const portfolio = formData.portfolio;
 
-    signUp(fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github).then(cred => {
+    signUp(fname, lname, email, password, occupation, industry, industryother, level, city, country, profilepic, twitter, instagram, medium, behance, github, portfolio).then(cred => {
       router.push('/account/my-account')
       signupForm.reset();
     })
