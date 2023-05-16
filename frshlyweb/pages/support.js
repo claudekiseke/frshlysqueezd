@@ -82,7 +82,6 @@ const Support = ({ logo, navigation, page, communityStats, supportTabs }) => {
       <Head>
         <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header logo={logo} navigation={navigation} />
       <PageHeading key={pageHeading.sys.id} page={page} />

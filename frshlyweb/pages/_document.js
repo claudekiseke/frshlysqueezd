@@ -4,8 +4,7 @@ export default function Document() {
   return (
     <Html lang="en" >
       <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta charSet="utf-8" />       <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
       </Head>
       <body>
         <Main />
