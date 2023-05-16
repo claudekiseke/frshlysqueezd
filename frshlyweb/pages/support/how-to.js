@@ -69,8 +69,7 @@ const HowTo = ({ logo, navigation, page, communityStats, accordion }) => {
         <>
             <Head>
                 <title>Frshly Squeezd - {pageHeading.fields.pageTitle}</title>
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta charSet="utf-8" />        
             </Head>
             <Header logo={logo} navigation={navigation} />
             <PageHeading key={pageHeading.sys.id} page={page} />
