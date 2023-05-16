@@ -1,6 +1,6 @@
 const NetworkDetails = ({ formData, setFormData, styles }) => {
     return (
-      <div className="register__network-details">
+      <div className={`${register__network-details} ${styles.signup__profile}`}>
         <input
           className={styles.login__textBox}
           type="file"
