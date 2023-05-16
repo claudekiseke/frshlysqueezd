@@ -6,12 +6,17 @@ const SupportTabs = ({ filter, supportTabs }) => {
 
     useEffect(() => {
         if (ref.current) {
+            if (filter != null) {
             if ((filter == 'all') || (ref.current.classList.contains(filter))) {
-                ref.current.classList.remove('show-grid');
-                ref.current.className += " " + 'show-grid';
+                if (!(ref.current.classList.contains('show'))) {
+                    ref.current.classList.remove('show-none');
+                    ref.current.className += " " + 'show';
+                }
             } else {
-                ref.current.classList.remove('show-grid');
+                ref.current.classList.remove('show');
+                ref.current.className += " " + 'show-none';
             }
+        }
         }
     });
     
