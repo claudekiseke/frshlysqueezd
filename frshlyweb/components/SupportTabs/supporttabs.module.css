@@ -37,4 +37,7 @@
         margin-bottom: 0;
         padding: 45px 40px;
     }
+    .supporttab:last-child {
+        cursor: not-allowed;
+    }
 }
