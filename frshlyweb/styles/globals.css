@@ -182,7 +182,6 @@ textarea {
   .container {
     grid-template-columns: repeat(12, 1fr);
     margin: 0 auto;
-    width: 100%;
   }
 }
 
